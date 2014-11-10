@@ -23,7 +23,7 @@ class Reducer:
         No parameters or returns.
         '''
 
-        self.main_window = tkinter.Tk()
+        self.main_window = tkinter.Tk().wm_title("Matrix Format Setup")
 
         #Initalize frames.
         self.info_frame = tkinter.Frame()
@@ -35,43 +35,30 @@ class Reducer:
         #Object for the information frame.
         self.info_label = tkinter.Label(self.info_frame, text="Enter the number of rows and columns, your preferred output format,"
                                                " and the number of trailing decimals if applicable.", justify="left",
-                                        wraplength=275)
-        self.info_label.pack()
+                                        wraplength=275).pack()
 
         #Objects for the size frame - the matrix's rows/columns are set here.
-        self.row_label = tkinter.Label(self.size_frame, text="Rows:")
-        self.col_label = tkinter.Label(self.size_frame, text="Columns:")
-        self.row = tkinter.Entry(self.size_frame, width=3)
-        self.col = tkinter.Entry(self.size_frame, width=3)
-
-        self.row_label.pack(side="left")
-        self.row.pack(side="left")
-        self.col_label.pack(side="left")
-        self.col.pack(side="left")
+        self.row_label = tkinter.Label(self.size_frame, text="Rows:").pack(side="left")
+        self.row = tkinter.Entry(self.size_frame, width=3).pack(side="left")
+        self.col_label = tkinter.Label(self.size_frame, text="Columns:").pack(side="left")
+        self.col = tkinter.Entry(self.size_frame, width=3).pack(side="left")
 
         #Objects for the digit frame
         self.digit_label = tkinter.Label(self.digit_frame, text="Digits:")
         self.digit = tkinter.Entry(self.digit_frame, width=3)
-        self.digit_label.pack(side="left")
-        self.digit.pack(side="left")
-
         #Objects for the format frame - the output formatting is specified here.
         self.output_var = tkinter.IntVar()
         self.output_var.set(0)
 
         self.fraction = tkinter.Radiobutton(self.format_frame, text="Fraction", variable=self.output_var, value=0,
-                                            command=self.hide_digits())
+                                            command=self.hide_digits).pack(side="left")
+
         self.decimal = tkinter.Radiobutton(self.format_frame, text="Decimal", variable=self.output_var, value=1,
-                                           command=self.show_digits())
-
-        self.fraction.pack(side="left")
-        self.decimal.pack(side="left")
-
+                                           command=self.show_digits).pack(side="left")
 
         #Object for the bottom frame
 
-        self.button = tkinter.Button(self.button_frame, text="Next", command=self.reduce)
-        self.button.pack()
+        self.button = tkinter.Button(self.button_frame, text="Next", command=self.reduce).pack()
 
         #Pack frames.
         self.info_frame.pack(anchor="nw")
@@ -82,15 +69,18 @@ class Reducer:
 
         tkinter.mainloop()
 
-    #Currently not functioning
     def show_digits(self):
-        self.digit_label.lift(self.digit)
-        self.digit.lift(self.digit_label)
 
-    #Currently not functioning
+
+        self.digit_label = tkinter.Label(self.digit_frame, text="Digits:")
+        self.digit = tkinter.Entry(self.digit_frame, width=3)
+        self.digit_label.pack(side="left")
+        self.digit.pack(side="left")
+
     def hide_digits(self):
-        self.digit_label.lower(self.digit)
-        self.digit.lower(self.digit_label)
+
+        self.digit_label.destroy()
+        self.digit.destroy()
 
     def reduce(self):
         pass
