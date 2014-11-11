@@ -5,7 +5,7 @@ This GUI-based program will row-reduce a matrix to RREF form.
 It will ask the user to enter the size of the matrix (rows and columns), with their preferred output format.
 '''
 import tkinter
-
+import tkinter.ttk as ttk
 
 class Reducer:
     '''
@@ -26,39 +26,39 @@ class Reducer:
         self.main_window = tkinter.Tk().wm_title("Matrix Format Setup")
 
         #Initalize frames.
-        self.info_frame = tkinter.Frame()
-        self.size_frame = tkinter.Frame()
-        self.format_frame = tkinter.Frame()
-        self.digit_frame = tkinter.Frame()
-        self.button_frame = tkinter.Frame()
+        self.info_frame = ttk.Frame()
+        self.size_frame = ttk.Frame()
+        self.format_frame = ttk.Frame()
+        self.digit_frame = ttk.Frame()
+        self.button_frame = ttk.Frame()
 
         #Object for the information frame.
-        self.info_label = tkinter.Label(self.info_frame, text="Enter the number of rows and columns, your preferred output format,"
+        self.info_label = ttk.Label(self.info_frame, text="Enter the number of rows and columns, your preferred output format,"
                                                " and the number of trailing decimals if applicable.", justify="left",
                                         wraplength=275).pack()
 
         #Objects for the size frame - the matrix's rows/columns are set here.
-        self.row_label = tkinter.Label(self.size_frame, text="Rows:").pack(side="left")
-        self.row = tkinter.Entry(self.size_frame, width=3).pack(side="left")
-        self.col_label = tkinter.Label(self.size_frame, text="Columns:").pack(side="left")
-        self.col = tkinter.Entry(self.size_frame, width=3).pack(side="left")
+        self.row_label = ttk.Label(self.size_frame, text="Rows:").pack(side="left")
+        self.row = ttk.Entry(self.size_frame, width=3).pack(side="left")
+        self.col_label = ttk.Label(self.size_frame, text="Columns:").pack(side="left")
+        self.col = ttk.Entry(self.size_frame, width=3).pack(side="left")
 
         #Objects for the digit frame
-        self.digit_label = tkinter.Label(self.digit_frame, text="Digits:")
-        self.digit = tkinter.Entry(self.digit_frame, width=3)
+        self.digit_label = ttk.Label(self.digit_frame, text="Digits:")
+        self.digit = ttk.Entry(self.digit_frame, width=3)
         #Objects for the format frame - the output formatting is specified here.
         self.output_var = tkinter.IntVar()
         self.output_var.set(0)
 
-        self.fraction = tkinter.Radiobutton(self.format_frame, text="Fraction", variable=self.output_var, value=0,
+        self.fraction = ttk.Radiobutton(self.format_frame, text="Fraction", variable=self.output_var, value=0,
                                             command=self.hide_digits).pack(side="left")
 
-        self.decimal = tkinter.Radiobutton(self.format_frame, text="Decimal", variable=self.output_var, value=1,
+        self.decimal = ttk.Radiobutton(self.format_frame, text="Decimal", variable=self.output_var, value=1,
                                            command=self.show_digits).pack(side="left")
 
         #Object for the bottom frame
 
-        self.button = tkinter.Button(self.button_frame, text="Next", command=self.reduce).pack()
+        self.button = ttk.Button(self.button_frame, text="Next", command=self.reduce).pack()
 
         #Pack frames.
         self.info_frame.pack(anchor="nw")
@@ -72,8 +72,8 @@ class Reducer:
     def show_digits(self):
 
 
-        self.digit_label = tkinter.Label(self.digit_frame, text="Digits:")
-        self.digit = tkinter.Entry(self.digit_frame, width=3)
+        self.digit_label = ttk.Label(self.digit_frame, text="Digits:")
+        self.digit = ttk.Entry(self.digit_frame, width=3)
         self.digit_label.pack(side="left")
         self.digit.pack(side="left")
 
