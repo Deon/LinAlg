@@ -23,7 +23,9 @@ class Reducer:
         No parameters or returns.
         '''
 
-        self.main_window = tkinter.Tk().wm_title("Matrix Format Setup")
+        self.main_window = tkinter.Tk()
+        self.main_window.wm_title("Matrix Format Setup")
+
 
         #Initalize frames.
         self.info_frame = ttk.Frame()
@@ -39,13 +41,16 @@ class Reducer:
 
         #Objects for the size frame - the matrix's rows/columns are set here.
         self.row_label = ttk.Label(self.size_frame, text="Rows:").pack(side="left")
-        self.row = ttk.Entry(self.size_frame, width=3).pack(side="left")
+        self.row = ttk.Entry(self.size_frame, width=3)
+        self.row.pack(side="left")
         self.col_label = ttk.Label(self.size_frame, text="Columns:").pack(side="left")
-        self.col = ttk.Entry(self.size_frame, width=3).pack(side="left")
+        self.col = ttk.Entry(self.size_frame, width=3)
+        self.col.pack(side="left")
 
         #Objects for the digit frame
         self.digit_label = ttk.Label(self.digit_frame, text="Digits:")
         self.digit = ttk.Entry(self.digit_frame, width=3)
+
         #Objects for the format frame - the output formatting is specified here.
         self.output_var = tkinter.IntVar()
         self.output_var.set(0)
@@ -58,33 +63,55 @@ class Reducer:
 
         #Object for the bottom frame
 
-        self.button = ttk.Button(self.button_frame, text="Next", command=self.reduce).pack()
+        self.button = ttk.Button(self.button_frame, text="Enter Values", command=self.matrix_input).pack()
 
         #Pack frames.
         self.info_frame.pack(anchor="nw")
         self.size_frame.pack(anchor="nw")
         self.format_frame.pack(anchor="nw")
         self.digit_frame.pack(anchor="nw")
-        self.button_frame.pack(anchor="nw")
+        self.button_frame.pack(anchor="n")
 
-        tkinter.mainloop()
+        self.main_window.mainloop()
 
     def show_digits(self):
-
-
         self.digit_label = ttk.Label(self.digit_frame, text="Digits:")
         self.digit = ttk.Entry(self.digit_frame, width=3)
         self.digit_label.pack(side="left")
         self.digit.pack(side="left")
 
     def hide_digits(self):
-
         self.digit_label.destroy()
         self.digit.destroy()
 
+    def matrix_input(self):
+        '''
+        Uses a 2D array of entry fields to take input.
+        :return:
+        '''
+        input_win = tkinter.Tk()
+        input_win.wm_title("Matrix Input")
+
+        self.num_rows = int(self.row.get())
+        self.num_cols = int(self.col.get())
+        self.input_fields = [ttk.Entry()] * self.num_rows * self.num_cols
+
+        instructions = ttk.Label(input_win, text = "Enter your values below.").pack()
+
+        for i in range (self.num_rows):
+            frame = tkinter.Frame(input_win)
+            for j in range(self.num_cols):
+                self.input_fields[i] = ttk.Entry(frame, width = 5).pack(side = "left")
+            frame.pack()
+        reduce = ttk.Button(input_win, text = "Reduce Matrix!", command = self.reduce).pack()
+
+        input_win.mainloop()
     def reduce(self):
+        for i in self.input_fields:
+            pass
+
+
+    def output(self):
         pass
-
-
 
 reducer = Reducer()
