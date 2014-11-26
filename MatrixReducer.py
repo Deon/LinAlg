@@ -6,6 +6,8 @@ It will ask the user to enter the size of the matrix (rows and columns), with th
 '''
 import tkinter
 import tkinter.ttk as ttk
+from sympy import *
+init_printing()
 
 class Reducer:
     '''
@@ -101,17 +103,39 @@ class Reducer:
         for i in range (self.num_rows):
             frame = tkinter.Frame(input_win)
             for j in range(self.num_cols):
-                self.input_fields[i] = ttk.Entry(frame, width = 5).pack(side = "left")
+                self.input_fields[i+j] = ttk.Entry(frame, width = 5)
+                self.input_fields[i+j].pack(side = "left")
             frame.pack()
         reduce = ttk.Button(input_win, text = "Reduce Matrix!", command = self.reduce).pack()
-
         input_win.mainloop()
-    def reduce(self):
-        for i in self.input_fields:
-            pass
 
+    def reduce(self):
+        #Sets up entries, a 2D Array (Matrix of size rows X cols)
+        self.entries = []
+        for i in range(self.num_rows):
+            row = []
+            for j in range(self.num_cols):
+                row.append(self.input_fields[i+j].get())
+            self.entries.append(row)
+
+        print(self.entries)
+        self.matrix = Matrix(self.entries)
+
+        print(latex(self.matrix))
+
+
+        self.reduced = self.matrix.rref()[0]
+        print (self.reduced)
+        return latex(self.matrix)
+
+    def reduceTest(self):
+        self.entries = [[3,4], [1,2]]
+        self.matrix = Matrix(self.entries)
+        print (latex(self.matrix))
+        return latex(self.matrix)
 
     def output(self):
         pass
 
 reducer = Reducer()
+reducer.reduceTest()
