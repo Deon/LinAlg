@@ -1,32 +1,28 @@
 <!DOCTYPE html>
-<html ng-app="FirstYear" lang="en">
+<html ng-app="LinAlgToolkit" lang="en">
 <head>
     <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-    <title>Molar Mass Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Linear Algebra Toolkit</title>
 
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/style.css">
-	<link href='http://fonts.googleapis.com/css?family=Roboto:500,400' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:500,400' rel='stylesheet' type='text/css'>
 
 
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      jax: ["input/TeX", "output/HTML-CSS"],
-      "HTML-CSS": { availableFonts: ["TeX"] },
-      processEnvironments: true
-    });
-    </script>
+
     <script type="text/javascript"
     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 
-	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
-    <script src="/static/script.js"></script>
+
     <script src="/static/ui-bootstrap-tpls-0.11.2.min.js"></script>
+    <script src="/static/MathJax.js"></script>
+    <script src="/static/script.js"></script>
 </head>
 
 <!--Navbar-->
@@ -40,7 +36,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">MolarFast Alpha</a>
+      <a class="navbar-brand" href="/">RREFit</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -54,21 +50,23 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<body ng-controller="MainCtrl">    
-	<div class = "container-fluid">
-        <div class = "row">
-			<!-- Matrix Stuff -->
-			<div class = "col-xs-12">
-				<h2>A matrix.</h2>
-                <p>\left[\begin{matrix}3 & 4\\1 & 2\end{matrix}\right]</p>
-                <div ng-controller = "ExampleCtrl">
-				<button ng-click = "changeModel()" type = "button" class = "btn btn-default">Display Matrix</button>
-				<p ng-model = "mjx" mathjax>{[{mjx}]}</p>
-                </div>
-				<p id = "footer">Made with love.</p>
-			</div>
-
-	</div> <!--Container-->
+<body ng-controller="MainCtrl">
+  <div class = "container-fluid">
+    <div class = "row">
+      <!-- Matrix Stuff -->
+      <div class = "col-xs-12">
+        <h2>RREFit</h2>
+          <p>
+            $$\left[\begin{matrix}3 & 4\\1 & 2\end{matrix}\right]$$
+          </p>
+          <div ng-controller = "MainCtrl">
+            <button ng-click = "displayMatrix()" type = "button" class = "btn btn-default">RREF it!</button>
+            <p ng-if = "matrix != null" id = "MatrixRREF">{[{matrix}]}</p>
+          </div>
+          <p id = "footer">Made with love.</p>
+      </div>
+    </div>
+  </div> <!--Container-->
 </body>
 
 </html>
