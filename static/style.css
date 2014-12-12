@@ -1,20 +1,4 @@
 * {
-
-    font-family: Roboto, sans-serif;
-    text-align: center;
-}
-
-p{
-    margin-top: 10px;
-	margin-left: 5px;
-	margin-right: 5px;
-}
-
-.navbar {
-    background-color: #d8d8d8;
-    color: #FFFFFF;
-}
-
-#footer{
-	color: #808080;
+  font-family: Roboto, sans-serif;
+  text-align: center; 
 }

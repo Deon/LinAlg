@@ -2,6 +2,8 @@
  * Created by Owner on 11/21/2014.
  */
 
+
+//MathJax Configuration
 MathJax.Hub.Config({
   jax: ["input/TeX","output/HTML-CSS","output/NativeMML"],
   tex2jax:{
@@ -15,7 +17,7 @@ var app = angular.module('LinAlgToolkit', ['ui.bootstrap']);
 app.config(function($interpolateProvider) {
   $interpolateProvider.startSymbol('{[{');
   $interpolateProvider.endSymbol('}]}');
-})
+});
 
 
 app.controller('MainCtrl', function($scope, $http){
