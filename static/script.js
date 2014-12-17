@@ -22,7 +22,8 @@ app.config(function($interpolateProvider) {
 app.controller('MainCtrl', function($scope, $http){
 
   $scope.isError = null;
-  $scope.matrix = null;
+  $scope.renderedMatrix = null;
+  $scope.rrefmatrix = null;
   $scope.rows = null;
   $scope.cols = null;
   $scope.isSizeSet = false;
@@ -33,7 +34,8 @@ app.controller('MainCtrl', function($scope, $http){
     console.log($scope.inputMatrix);
       $http.post('/getReducedMatrix/', $scope.inputMatrix)
           .then(function(matrix){
-            $scope.matrix = matrix.data;
+            $scope.renderedMatrix = matrix.data[0];
+            $scope.rrefMatrix = matrix.data[1]
 
             //Delay output by a bit so that output is rendered properly.
             setTimeout(function() {

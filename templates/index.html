@@ -75,7 +75,7 @@
         </div>
         <button ng-click = "displayMatrix()" type = "button" class = "btn btn-default">RREF it!</button>
       </form>
-        <p ng-if = "matrix != null" id = "MatrixRREF">{[{matrix}]}</p>
+        <p ng-if = "renderedMatrix != null" id = "MatrixRREF">{[{renderedMatrix}]}{[{rrefMatrix}]}</p>
       </div>
 
       <p id = "footer">Made with love.</p>
