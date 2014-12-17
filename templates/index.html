@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html ng-app="LinAlgToolkit" lang="en">
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Linear Algebra Toolkit</title>
+  <title>Linear Algebra Toolkit</title>
 
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/style.css">
   <link href='http://fonts.googleapis.com/css?family=Roboto:500,400' rel='stylesheet' type='text/css'>
 
 
 
-    <script type="text/javascript"
-    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
+  <script type="text/javascript"
+          src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 
   <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
 
-    <script src="/static/ui-bootstrap-tpls-0.11.2.min.js"></script>
-    <script src="/static/script.js"></script>
+  <script src="/static/ui-bootstrap-tpls-0.11.2.min.js"></script>
+  <script src="/static/script.js"></script>
 </head>
 
 <!--Navbar-->
@@ -50,22 +50,38 @@
 </nav>
 
 <body ng-controller="MainCtrl">
-  <div class = "container-fluid">
-    <div class = "row">
-      <!-- Matrix Stuff -->
-      <div class = "col-xs-12">
-        <h2>RREFit</h2>
-          <p>
-            $$\left[\begin{matrix}3 & 4\\1 & 2\end{matrix}\right]$$
-          </p>
-          <div ng-controller = "MainCtrl">
-            <button ng-click = "displayMatrix()" type = "button" class = "btn btn-default">RREF it!</button>
-            <p ng-if = "matrix != null" id = "MatrixRREF">{[{matrix}]}</p>
+<div class = "container-fluid">
+  <div class = "row">
+    <!-- Matrix Stuff -->
+    <div class = "col-md-8 col-md-offset-2">
+      <h2>RREFit</h2>
+
+      <form class="form-inline" role="form" ng-show = "isSizeSet == false">
+        <div class="form-group">
+          <input class="form-control inputField" placeholder="Rows" ng-model = "rows" >
+          <input class="form-control inputField" placeholder="Columns" ng-model = "cols">
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg submit" ng-click = setSize()>Set Size</button>
+      </form>
+
+      <div id = "matrixEntry" ng-show = "isSizeSet == true">
+        <p>Enter your matrix!</p>
+        <form class="form-inline" role="form">
+        <div class="form-group">
+          <div class = "form-row" ng-repeat = "row in getRows() track by $index">
+            <input class="form-control inputField" placeholder = "{[{$parent.$index}]} {[{$index}]}"
+                   ng-repeat = "col in getCols() track by $index" ng-model = "inputMatrix[$parent.$index][$index]">
           </div>
-          <p id = "footer">Made with love.</p>
+        </div>
+        <button ng-click = "displayMatrix()" type = "button" class = "btn btn-default">RREF it!</button>
+      </form>
+        <p ng-if = "matrix != null" id = "MatrixRREF">{[{matrix}]}</p>
       </div>
+
+      <p id = "footer">Made with love.</p>
     </div>
-  </div> <!--Container-->
+  </div>
+</div> <!--Container-->
 </body>
 
 </html>

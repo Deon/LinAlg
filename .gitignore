@@ -1,43 +1,63 @@
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
+# Stuff
+.xml
 
-# Folder config file
-Desktop.ini
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
 
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
+# C extensions
+*.so
 
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
+# Distribution / packaging
+.Python
+.pyc
+static/.sass-cache/
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+.idea/
+ptable-parser/
+*.egg-info/
+.installed.cfg
+*.egg
 
-# =========================
-# Operating System Files
-# =========================
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
 
-# OSX
-# =========================
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
 
-.DS_Store
-.AppleDouble
-.LSOverride
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
 
-# Icon must end with two \r
-Icon
+# Translations
+*.mo
+*.pot
 
-# Thumbnails
-._*
+# Django stuff:
+*.log
 
-# Files that might appear on external disk
-.Spotlight-V100
-.Trashes
+# Sphinx documentation
+docs/_build/
 
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
+# PyBuilder
+target/
+*.xml
+*.xml

@@ -16,9 +16,10 @@ def hello():
 def about():
     return render_template("about.html")
 
-@app.route("/getReducedMatrix/")
+@app.route("/getReducedMatrix/", methods = ["POST"])
 def getMatrix():
-    entries = [[3,4], [1,2]]
+    entries = request.get_json()
+    app.logger.debug(entries)
     matrix = Matrix(entries)
     matrix = matrix.rref()[0]
     app.logger.debug(latex(matrix, mode="equation", itex = True))

@@ -1,4 +1,10 @@
+/* line 1, C:/Users/Owner/Documents/GitHub/MatrixReducer/static/style.scss */
 * {
   font-family: Roboto, sans-serif;
-  text-align: center; 
-}
+  text-align: center; }
+
+/* line 6, C:/Users/Owner/Documents/GitHub/MatrixReducer/static/style.scss */
+.inputField {
+  max-width: 100px; }
+
+/*# sourceMappingURL=style.css.map */
