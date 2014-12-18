@@ -13,10 +13,11 @@ $lightPurple: #B39DDB;
 $Purple: #673AB7;
 $darkPurple: #512DA8;
 
-//Secondary Palette - Amber 400, 600, 800
-$lightAmber: #FFCA28;
-$Amber: #FFB300;
-$darkAmber: #FF8F00;
+//Secondary Palette - Amber 50, 100, 500, 700
+$background: #FFF8E1;
+$lightAmber: #FFECB3;
+$Amber: #FFC107;
+$darkAmber: #FFA000;
 
 //------------ END COLOUR PALETTE
 
@@ -108,6 +109,9 @@ form{
   padding-bottom: 20px;
 }
 
+body{
+  background-color: $background;
+}
 .btn{
   border-radius: 0;
 }
