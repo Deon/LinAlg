@@ -1,81 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Molar Mass Calculator</title>
+	<title>LinAlg | About</title>
 
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/static/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Roboto:500,400' rel='stylesheet' type='text/css'>
-	
+
 	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
-    <script src="/static/script.js"></script>
-    <script src="/static/ui-bootstrap-tpls-0.11.2.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
+	<script src="/static/script.js"></script>
+	<script src="/static/ui-bootstrap-tpls-0.11.2.min.js"></script>
 </head>
-	
+
 <nav class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">
-	<!-- Brand and toggle get grouped for better mobile display -->
-	<div class="navbar-header">
-	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-		<span class="sr-only">Toggle navigation</span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-	  </button>
-	  <a class="navbar-brand" href="/">MolarFast Alpha</a>
-	</div>
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/">LinAlg</a>
+		</div>
 
-	<!-- Collect the nav links, forms, and other content for toggling -->
-	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	  <ul class="nav navbar-nav">
-		<li><a href="/">Home</a></li>
-		<li class="active"><a href="/about.html">About<span class ="sr-only">(current)</span></a></li>
-	  </ul>
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li><a href="/">Home</a></li>
+				<li class="active"><a href="/about.html">About<span class ="sr-only">(current)</span></a></li>
+			</ul>
 
-	</div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+		</div><!-- /.navbar-collapse -->
+	</div><!-- /.container-fluid -->
 </nav>
 
 <body>
-	<div class = "container-fluid">
-		<div class = "row">
-			<div class = "col-xs-12 col-md-8 col-md-offset-2">
-				<img class = "img-responsive center-block" src = "http://i.imgur.com/Pw9Ippn.png">
-
-				<h1>About MolarFast</h1>
-				<p>
-					MolarFast is designed to give you the Molar Mass of a chemical compound quickly - hence MolarFast.
-					This web-app was developed with AngularJS and Bootstrap for the front-end, with Flask and Python providing the
-					back-end. If you're wondering why there's a time thing on the home page, truth be told ... we don't know either. 
-					But then again, it helped us figure out a few implementation issues so we left it. 
-				</p>
-				<p>As of the latest update, MolarFast is mostly functional - you can use brackets, coefficents, etc. However, hydrates DO NOT fully work.
-				Issues can be reported on the <a href = "https://github.com/DeonHua/MolarFast/issues">Github</a>.</p>
-				
-				<h1>About Us</h1>
-				<p>
-				MolarFast was created at the University of Waterloo's Software Engineering HackDay on November 21, 2014 by 
-				<a href = "http://github.com/timmui">Timothy Mui</a>, a Computer Engineering student,
-					and <a href = "http://github.com/DeonHua">Deon Hua</a>, a Software Engineering student.
-					You can find the source code on our <a href = "http://github.com/DeonHua/MolarFast">GitHub</a>.</p>
-				<p id = "footer">Made with love.</p>
-			</div>
+<div class = "container-fluid">
+	<div class = "row">
+		<div class = "col-xs-12 col-md-8 col-md-offset-2">
+			<h1>About LinAlg Toolkit</h1>
+			<p>
+				The LinAlg Toolkit is a quick helper for linear algebra! For now, it has a Matrix Reducer - it'll reduce matrices
+				to RREF.
+			</p>
+			<p>Developed with AngularJS, MathJax, Flask, and Python.</p>
+			<p id = "footer">Made with love.</p>
 		</div>
 	</div>
+</div>
 </body>
 <!-- Tracking -->
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+					m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-57076335-1', 'auto');
-  ga('send', 'pageview');
+	ga('create', 'UA-57076335-1', 'auto');
+	ga('send', 'pageview');
 
 </script>
 </html>
