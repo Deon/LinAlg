@@ -35,7 +35,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/">Home<span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="/" class = "active">Home<span class="sr-only">(current)</span></a></li>
         <li><a href="/about.html">About</a></li>
       </ul>
 
@@ -67,9 +67,19 @@
                      ng-repeat = "col in getCols() track by $index" ng-model = "inputMatrix[$parent.$index][$index]">
             </div>
           </div>
+          <br>
           <button ng-click = "displayMatrix()" type = "button" class = "btn btn-default">RREF it!</button>
         </form>
-        <p ng-if = "renderedMatrix != null" id = "MatrixRREF">{[{renderedMatrix}]}{[{rrefMatrix}]}</p>
+        <table id = "MatrixRREF" ng-if = "renderedMatrix != null" align = "center">
+          <tr>
+            <th>Original Matrix</th>
+            <th>Matrix in RREF</th>
+          </tr>
+          <tr>
+            <td>{[{renderedMatrix}]}</td>
+            <td>{[{rrefMatrix}]}</td>
+          </tr>
+        </table>
       </div>
 
       <p id = "footer">Made with love.</p>

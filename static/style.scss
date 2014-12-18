@@ -1,3 +1,83 @@
+
+//----------- COLOUR PALETTE ---------------
+
+//B/W Hues
+$white: #FFFFFF;
+$lightGrey: #B0B0B0;
+$grey: #808080;
+$darkGrey: #505050;
+$black: #000000;
+
+//Primary Palette - Deep Purple 200, 500, 800
+$lightPurple: #B39DDB;
+$purple: #673AB7;
+$darkPurple: #512DA8;
+
+//Secondary Palette - Amber A200, A400, A700
+$lightAmber: #FFD740;
+$amber: #FFC400;
+$darkAmber: #FFAB00;
+
+//------------ END COLOUR PALETTE
+
+/* Navbar stuff. */
+.navbar-default{
+  border-radius: 0;
+  background-color: $purple;
+  border: none;
+  color: $white;
+
+  /* Navbar button on mobile. */
+
+  .navbar-toggle, .navbar-toggle:focus{
+    background-color: $purple;
+    color: inherit;
+    border-radius: 0;
+
+    .icon-bar{
+      background-color: $white;
+      border-radius: inherit;
+    }
+    &:hover{
+      background-color: $darkPurple;
+    }
+  }
+
+  //Branding
+  .navbar-brand{
+    font-size: 1.4em;
+    color: inherit;
+
+    &:hover{
+      color: $darkGrey;
+    }
+  }
+
+  .navbar-collapse{
+    border: none;
+  }
+
+  //Other Links
+  .navbar-nav li a {
+    color: $white;
+    font-size: 1.1em;
+
+    &:hover {
+      color: $darkGrey;
+    }
+  }
+
+  .navbar-nav .active a{
+    background-color: $darkPurple;
+    color: $white;
+
+    &:hover {
+      color: $darkGrey;
+      background-color: $darkPurple;
+    }
+  }
+}
+
 * {
   font-family: Roboto, sans-serif;
   text-align: center;
@@ -9,4 +89,22 @@
 
 #footer{
   margin-top: 20px;
+  color: $darkGrey;
+}
+
+td, th{
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+}
+
+table{
+  padding-top: 20px;
+}
+.btn-primary, .btn-primary:focus{
+  background-color: $purple;
+  border-color: $darkPurple;
+  &:hover{
+    background-color: $darkPurple;
+  }
 }
