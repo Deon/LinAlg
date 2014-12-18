@@ -4,18 +4,18 @@
 //B/W Hues
 $white: #FFFFFF;
 $lightGrey: #B0B0B0;
-$grey: #808080;
+$Grey: #808080;
 $darkGrey: #505050;
 $black: #000000;
 
 //Primary Palette - Deep Purple 200, 500, 800
 $lightPurple: #B39DDB;
-$purple: #673AB7;
+$Purple: #673AB7;
 $darkPurple: #512DA8;
 
 //Secondary Palette - Amber A200, A400, A700
 $lightAmber: #FFD740;
-$amber: #FFC400;
+$Amber: #FFC400;
 $darkAmber: #FFAB00;
 
 //------------ END COLOUR PALETTE
@@ -23,14 +23,14 @@ $darkAmber: #FFAB00;
 /* Navbar stuff. */
 .navbar-default{
   border-radius: 0;
-  background-color: $purple;
+  background-color: $darkAmber;
   border: 0;
   color: $white;
 
   /* Navbar button on mobile. */
 
   .navbar-toggle, .navbar-toggle:focus{
-    background-color: $purple;
+    background-color: $darkAmber;
     color: inherit;
     border-radius: 0;
 
@@ -39,7 +39,7 @@ $darkAmber: #FFAB00;
       border-radius: inherit;
     }
     &:hover{
-      background-color: $darkPurple;
+      background-color: $Amber;
     }
   }
 
@@ -49,7 +49,7 @@ $darkAmber: #FFAB00;
     color: inherit;
 
     &:hover{
-      color: $lightGrey
+      color: $Grey;
     }
   }
 
@@ -63,20 +63,20 @@ $darkAmber: #FFAB00;
     font-size: 1.1em;
 
     &:hover {
-      color: $lightGrey;
+      color: $Grey;
     }
   }
   /*Currently active links */
   .navbar-nav .active a{
-    background-color: $darkPurple;
+    background-color: $Amber;
     color: $white;
 
     &:hover {
-      color: $lightGrey;
-      background-color: $darkPurple;
+      color: $Grey;
+      background-color: $Amber;
     }
   }
-}
+} 
 
 * {
   font-family: sans-serif;
@@ -113,12 +113,14 @@ form{
 }
 
 .btn-primary, .btn-primary:focus{
-  background-color: $purple;
-  border-color: $darkPurple;
+  background-color: $darkAmber;
+  border-color: $Amber;
   border-radius: 0;
   height: 40px;
   font-size: 20px;
+  box-shadow: 0;
   &:hover{
-    background-color: $darkPurple;
+    background-color: $Amber;
+    border-color: $darkAmber;
   }
 }
