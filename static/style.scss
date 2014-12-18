@@ -24,7 +24,7 @@ $darkAmber: #FFAB00;
 .navbar-default{
   border-radius: 0;
   background-color: $purple;
-  border: none;
+  border: 0;
   color: $white;
 
   /* Navbar button on mobile. */
@@ -43,13 +43,13 @@ $darkAmber: #FFAB00;
     }
   }
 
-  //Branding
+  /*Branding*/
   .navbar-brand{
     font-size: 1.4em;
     color: inherit;
 
     &:hover{
-      color: $darkGrey;
+      color: $lightGrey
     }
   }
 
@@ -57,34 +57,37 @@ $darkAmber: #FFAB00;
     border: none;
   }
 
-  //Other Links
+  /*Other Links*/
   .navbar-nav li a {
     color: $white;
     font-size: 1.1em;
 
     &:hover {
-      color: $darkGrey;
+      color: $lightGrey;
     }
   }
-
+  /*Currently active links */
   .navbar-nav .active a{
     background-color: $darkPurple;
     color: $white;
 
     &:hover {
-      color: $darkGrey;
+      color: $lightGrey;
       background-color: $darkPurple;
     }
   }
 }
 
 * {
-  font-family: Roboto, sans-serif;
+  font-family: sans-serif;
   text-align: center;
 }
 
 .inputField{
-  max-width: 100px;
+  max-width: 110px;
+  border-radius: 0;
+  height: 40px;
+  font-size: 20px;
 }
 
 #footer{
@@ -101,9 +104,20 @@ td, th{
 table{
   padding-top: 20px;
 }
+form{
+  padding-bottom: 20px;
+}
+
+.btn{
+  border-radius: 0;
+}
+
 .btn-primary, .btn-primary:focus{
   background-color: $purple;
   border-color: $darkPurple;
+  border-radius: 0;
+  height: 40px;
+  font-size: 20px;
   &:hover{
     background-color: $darkPurple;
   }

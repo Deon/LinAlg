@@ -55,7 +55,7 @@
           <input class="form-control inputField" placeholder="Rows" ng-model = "rows" >
           <input class="form-control inputField" placeholder="Columns" ng-model = "cols">
         </div>
-        <button type="submit" class="btn btn-primary btn-lg submit" ng-click = setSize()>Set Size</button>
+        <button type="submit" class="btn btn-primary submit" ng-click = setSize()>Set Size!</button>
       </form>
 
       <div id = "matrixEntry" ng-show = "isSizeSet == true">
@@ -68,8 +68,8 @@
             </div>
           </div>
           <br>
-          <button ng-click = "displayMatrix()" type = "button" class = "btn btn-default">RREF it!</button>
         </form>
+        <button ng-click = "displayMatrix()" type = "button" class = "btn btn-primary">RREF it!</button>
         <table id = "MatrixRREF" ng-if = "renderedMatrix != null" align = "center">
           <tr>
             <th>Original Matrix</th>
