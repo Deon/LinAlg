@@ -33,6 +33,10 @@ app.controller('MainCtrl', function($scope, $http){
   checkMatrix = function(){
     for (var i = 0; i < $scope.rows; i++){
       for (var j = 0; j < $scope.cols; j++){
+        if ($scope.inputMatrix[i][j] == "" || $scope.inputMatrix[i][j] == undefined || $scope.inputMatrix[i][j] == null){
+          $scope.error = "Make sure you fill everything in!";
+          return;
+        }
         if (isNaN($scope.inputMatrix[i][j])){
           $scope.error = "Enter only numbers please!";
           return;
