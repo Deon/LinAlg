@@ -57,12 +57,13 @@ app.controller('MainCtrl', function($scope, $http){
     console.log($scope.rows);
     console.log($scope.cols);
 
-    if (($scope.rows == null || $scope.rows == undefined || $scope.rows == "") && ($scope.cols != null
+    if (isNaN($scope.rows) || isNaN($scope.cols)){
+      $scope.error = "That isn't a number!";
+    }
+
+    else if (($scope.rows == null || $scope.rows == undefined || $scope.rows == "") || ($scope.cols == null
         || $scope.cols == undefined || $scope.cols == "")){
       $scope.error = "You should enter something!";
-    }
-    else if (isNaN($scope.rows) || isNaN($scope.cols)){
-      $scope.error = "That isn't a number!";
     }
     else{
       $scope.isSizeSet = true;
