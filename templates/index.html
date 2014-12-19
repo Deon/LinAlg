@@ -75,6 +75,10 @@
             <th>Original Matrix</th>
             <th>Matrix in RREF</th>
           </tr>
+          <tr ng-if = "det">
+            <td>Determinant {[{det}]}</td>
+            <td>Determinant {[{rrefDet}]}</td>
+          </tr>
           <tr>
             <td>{[{renderedMatrix}]}</td>
             <td>{[{rrefMatrix}]}</td>

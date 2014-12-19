@@ -1,4 +1,4 @@
-__author__ = 'Owner'
+__author__ = 'Deon Hua'
 from flask import *
 import os
 import json
@@ -19,11 +19,14 @@ def about():
 @app.route("/getReducedMatrix/", methods = ["POST"])
 def getMatrix():
     entries = request.get_json()
-    app.logger.debug(entries)
     matrix = Matrix(entries)
     rrefmatrix = matrix.rref()[0]
-    app.logger.debug(latex(rrefmatrix, mode="equation", itex = True))
-    array = [latex(matrix, mode="equation", itex = True), latex(rrefmatrix, mode="equation", itex = True)]
+
+    if (matrix.shape[0] == matrix.shape[1]):
+        array = [latex(matrix, mode="equation", itex = True), latex(rrefmatrix, mode="equation", itex = True), str(matrix.det()), str(rrefmatrix.det())]
+    else:
+        array = [latex(matrix, mode="equation", itex = True), latex(rrefmatrix, mode="equation", itex = True)]
+
     response = json.dumps(array, sort_keys=True,indent=4, separators=(',', ': '))
     return response
 
