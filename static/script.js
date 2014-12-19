@@ -30,26 +30,45 @@ app.controller('MainCtrl', function($scope, $http){
   $scope.inputMatrix = false;
   $scope.error = null;
 
+  checkMatrix = function(){
+    for (var i = 0; i < $scope.rows; i++){
+      for (var j = 0; j < $scope.cols; j++){
+        if (isNaN($scope.inputMatrix[i][j])){
+          $scope.error = "Enter only numbers please!";
+          return;
+        }
+      }
+    }
+  };
   $scope.displayMatrix = function(){
-
     console.log($scope.inputMatrix);
-      $http.post('/getReducedMatrix/', $scope.inputMatrix)
-          .then(function(matrix){
-            $scope.renderedMatrix = matrix.data[0];
-            $scope.rrefMatrix = matrix.data[1];
-            if ($scope.rows == $scope.cols) {
-              $scope.det = matrix.data[2];
-              $scope.rrefDet = matrix.data[3];
-            }
-            //$scope.null = matrix.data[4];
 
-            //Delay output by a bit so that output is rendered properly.
-            setTimeout(function() {
-              MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-            });
-            console.log($scope.matrix);
-          }
-      );
+    checkMatrix();
+
+    if ($scope.error == null) {
+      $http.post('/getReducedMatrix/', $scope.inputMatrix)
+      .success(function (matrix) {
+        $scope.renderedMatrix = matrix.data[0];
+        $scope.rrefMatrix = matrix.data[1];
+
+        //Provide dets only for square matrices (col == row)
+        if ($scope.rows == $scope.cols) {
+          $scope.det = matrix.data[2];
+          $scope.rrefDet = matrix.data[3];
+        }
+        //$scope.null = matrix.data[4];
+
+        //Delay output by a bit so that output is rendered properly.
+        setTimeout(function () {
+          MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        });
+        console.log($scope.matrix);
+      })
+      .error(function(){
+        $scope.error = "Enter only numbers please!";
+        console.log($scope.error);
+      })
+    }
   };
 
 

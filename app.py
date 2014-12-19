@@ -21,7 +21,7 @@ def getMatrix():
     entries = request.get_json()
     matrix = Matrix(entries)
     rrefmatrix = matrix.rref()[0]
-
+    app.logger.debug(rrefmatrix)
     if (matrix.shape[0] == matrix.shape[1]):
         array = [latex(matrix, mode="equation", itex = True), latex(rrefmatrix, mode="equation", itex = True), str(matrix.det()), str(rrefmatrix.det())]
     else:
