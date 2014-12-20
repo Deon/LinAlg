@@ -43,6 +43,7 @@ app.controller('MainCtrl', function($scope, $http){
         }
       }
     }
+    $scope.error = null;
   };
   $scope.displayMatrix = function(){
     console.log($scope.inputMatrix);
@@ -51,7 +52,8 @@ app.controller('MainCtrl', function($scope, $http){
 
     if ($scope.error == null) {
       $http.post('/getReducedMatrix/', $scope.inputMatrix)
-      .success(function (matrix) {
+      .then(function (matrix) {
+        console.log(matrix.data);
         $scope.renderedMatrix = matrix.data[0];
         $scope.rrefMatrix = matrix.data[1];
 
@@ -66,12 +68,7 @@ app.controller('MainCtrl', function($scope, $http){
         setTimeout(function () {
           MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         });
-        console.log($scope.matrix);
-      })
-      .error(function(){
-        $scope.error = "Enter only numbers please!";
-        console.log($scope.error);
-      })
+      });
     }
   };
 

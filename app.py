@@ -27,7 +27,9 @@ def getMatrix():
     else:
         array = [latex(matrix, mode="equation", itex = True), latex(rrefmatrix, mode="equation", itex = True)]
 
+    app.logger.debug(array)
     response = json.dumps(array, sort_keys=True,indent=4, separators=(',', ': '))
+    app.logger.debug(response)
     return response
 
 if __name__ == ("__main__"):
