@@ -41,7 +41,6 @@
   text-align: center; }
 
 .inputField {
-  max-width: 110px;
   border-radius: 0;
   height: 40px;
   font-size: 20px; }
@@ -64,6 +63,10 @@ form {
 body {
   background-color: #FFF8E1; }
 
+.bg-danger {
+  padding: 10px 5px 10px 10px;
+  border-radius: 1px; }
+
 .btn {
   border-radius: 0; }
 
@@ -76,6 +79,7 @@ body {
   box-shadow: 0; }
   .btn-primary:hover, .btn-primary:focus:hover {
     background-color: #FFC107;
-    border-color: #FFA000; }
+    border-color: #FFA000;
+    box-shadow: 0; }
 
 /*# sourceMappingURL=style.css.map */

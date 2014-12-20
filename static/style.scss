@@ -85,7 +85,6 @@ $darkAmber: #FFA000;
 }
 
 .inputField{
-  max-width: 110px;
   border-radius: 0;
   height: 40px;
   font-size: 20px;
@@ -112,6 +111,11 @@ form{
 body{
   background-color: $background;
 }
+
+.bg-danger{
+  padding: 10px 5px 10px 10px;
+  border-radius: 1px;
+}
 .btn{
   border-radius: 0;
 }
@@ -126,5 +130,6 @@ body{
   &:hover{
     background-color: $Amber;
     border-color: $darkAmber;
+    box-shadow: 0;
   }
 }
