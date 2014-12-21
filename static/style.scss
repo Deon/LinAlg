@@ -132,6 +132,8 @@ body{
 }
 .btn{
   border-radius: 0;
+  height: 40px;
+  font-size: 20px;
 }
 
 .btn-primary, .btn-primary:focus{
@@ -140,10 +142,12 @@ body{
   border-radius: 0;
   height: 40px;
   font-size: 20px;
-  box-shadow: 0;
   &:hover{
     background-color: $Amber;
     border-color: $darkAmber;
-    box-shadow: 0;
   }
+}
+
+.matrixButtons{
+  margin-bottom: 10px;
 }

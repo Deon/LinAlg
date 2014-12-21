@@ -43,7 +43,7 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<body ng-controller="MainCtrl">
+<body ng-controller="MainController">
 <div class = "container-fluid">
   <div class = "row">
     <!-- Matrix Stuff -->
@@ -79,7 +79,8 @@
           </div>
           <br>
         </form>
-        <button ng-click = "displayMatrix()" type = "button" class = "btn btn-primary">RREF it!</button>
+        <button ng-click = "displayMatrix()" type = "button" class = "btn btn-primary matrixButtons">RREF it!</button>
+        <button ng-click = "isSizeSet = !isSizeSet" type = "button" class = "btn btn-default matrixButtons">Change Size</button>
         <table id = "MatrixRREF" ng-if = "renderedMatrix != null" align = "center">
           <tr>
             <th>Original Matrix</th>

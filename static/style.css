@@ -77,18 +77,21 @@ body {
   border-radius: 1px; }
 
 .btn {
-  border-radius: 0; }
+  border-radius: 0;
+  height: 40px;
+  font-size: 20px; }
 
 .btn-primary, .btn-primary:focus {
   background-color: #FFA000;
   border-color: #FFC107;
   border-radius: 0;
   height: 40px;
-  font-size: 20px;
-  box-shadow: 0; }
+  font-size: 20px; }
   .btn-primary:hover, .btn-primary:focus:hover {
     background-color: #FFC107;
-    border-color: #FFA000;
-    box-shadow: 0; }
+    border-color: #FFA000; }
+
+.matrixButtons {
+  margin-bottom: 10px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -19,7 +19,7 @@ app.config(function($interpolateProvider) {
 });
 
 
-app.controller('MainCtrl', function($scope, $http){
+app.controller('MainController', function($scope, $http){
 
   $scope.isError = null;
   $scope.renderedMatrix = null;
