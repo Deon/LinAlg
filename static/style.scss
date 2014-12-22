@@ -104,10 +104,15 @@ $darkPurple: #512DA8;
 #footer{
   margin-top: 20px;
   color: $Grey;
+  text-align: center;
 }
 
 .col-xs-6{
   padding-top: 10px;
+}
+
+.about-page > .row > .col-xs-12 > h1, .about-page > .row > .col-xs-12 > p{
+  text-align: left;
 }
 td, th{
   padding-left: 10px;

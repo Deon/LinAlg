@@ -27,10 +27,19 @@ app.controller('MainController', function($scope, $http){
   $scope.rows = null;
   $scope.cols = null;
   $scope.isSizeSet = false;
-  $scope.inputMatrix = false;
+  $scope.inputMatrix = null;
   $scope.error = null;
+  $scope.det = null;
+  $scope.rrefDet = null;
 
-  checkMatrix = function(){
+  var nullVars = function(){
+  $scope.renderedMatrix = null;
+  $scope.rrefmatrix = null;
+  $scope.det = null;
+  $scope.rrefDet = null;
+  };
+
+  var checkMatrix = function(){
     for (var i = 0; i < $scope.rows; i++){
       for (var j = 0; j < $scope.cols; j++){
         if ($scope.inputMatrix[i][j] == "" || $scope.inputMatrix[i][j] == undefined || $scope.inputMatrix[i][j] == null){
@@ -96,6 +105,7 @@ app.controller('MainController', function($scope, $http){
       console.log($scope.inputMatrix);
     }
     console.log($scope.error);
+    nullVars();
   };
 
   //Returns array for looping.
