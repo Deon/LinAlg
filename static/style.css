@@ -68,6 +68,10 @@ td, th {
   padding-top: 10px;
   text-align: center; }
 
+td.matrixElement {
+  padding: 0;
+  text-align: center; }
+
 table {
   padding-top: 20px; }
 

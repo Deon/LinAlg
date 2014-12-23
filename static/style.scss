@@ -101,6 +101,8 @@ $darkPurple: #512DA8;
   font-size: 20px;
   max-width: 70px;
 }
+
+
 #footer{
   margin-top: 20px;
   color: $Grey;
@@ -118,6 +120,11 @@ td, th{
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 10px;
+  text-align: center;
+}
+
+td.matrixElement{
+  padding: 0;
   text-align: center;
 }
 

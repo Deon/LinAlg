@@ -72,9 +72,9 @@
         <p>Enter your matrix!</p>
         <form class="form-inline" role="form">
           <div class="form-group">
-            <table>
+            <table align = "center">
               <tr ng-repeat = "row in getRows() track by $index">
-                <td ng-repeat = "col in getCols() track by $index">
+                <td class = "matrixElement" ng-repeat = "col in getCols() track by $index" >
                   <input class="form-control matrixField" ng-model = "inputMatrix[$parent.$index][$index]">
                 </td>
               </tr>
