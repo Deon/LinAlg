@@ -4,7 +4,7 @@
 
 //MathJax Configuration
 MathJax.Hub.Config({
-  jax: ["input/TeX","output/HTML-CSS","output/NativeMML"],
+  jax: ["input/TeX", "output/HTML-CSS","output/NativeMML"],
   tex2jax:{
     displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
   }
