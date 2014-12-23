@@ -29,7 +29,7 @@ def getMatrix():
     if matrix.shape[0] == matrix.shape[1]:
         dict["det"] = str(matrix.det())
         dict["rrefDet"] = str(rrefmatrix.det())
-        if (checkDet(matrix) and checkDet(rrefmatrix)):
+        if matrix.det() and rrefmatrix.det():
             dict["inverse"] = latex(matrix**-1, mode="equation", itex = True)
             dict["inverseTranspose"] = latex((matrix**-1).T, mode="equation", itex = True)
 
@@ -40,14 +40,6 @@ def getMatrix():
     app.logger.debug(response)
     return response
 
-def checkDet(matrix):
-    try:
-        matrix.det()
-
-    except ValueError:
-        return false
-
-    return true
 
 if __name__ == ("__main__"):
     app.run(debug=True,host='0.0.0.0',port=int(os.environ.get("PORT", 5001)))
