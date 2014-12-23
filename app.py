@@ -22,15 +22,32 @@ def getMatrix():
     matrix = Matrix(entries)
     rrefmatrix = matrix.rref()[0]
     app.logger.debug(rrefmatrix)
-    if (matrix.shape[0] == matrix.shape[1]):
-        array = [latex(matrix, mode="equation", itex = True), latex(rrefmatrix, mode="equation", itex = True), str(matrix.det()), str(rrefmatrix.det())]
-    else:
-        array = [latex(matrix, mode="equation", itex = True), latex(rrefmatrix, mode="equation", itex = True)]
+    dict = {"original":latex(matrix, mode="equation", itex = True),
+                "rref": latex(rrefmatrix, mode="equation", itex = True),
+                "transpose": latex(matrix.T, mode="equation", itex = True),
+                "rrefTranspose": latex(rrefmatrix.T, mode="equation", itex = True)}
+    if matrix.shape[0] == matrix.shape[1]:
+        dict["det"] = str(matrix.det())
+        dict["rrefDet"] = str(rrefmatrix.det())
+        if (checkDet(matrix) and checkDet(rrefmatrix)):
+            dict["inverse"] = latex(matrix**-1, mode="equation", itex = True)
+            dict["inverseTranspose"] = latex((matrix**-1).T, mode="equation", itex = True)
 
-    app.logger.debug(array)
-    response = json.dumps(array, sort_keys=True,indent=4, separators=(',', ': '))
+
+
+    app.logger.debug(dict)
+    response = json.dumps(dict, sort_keys=True,indent=4, separators=(',', ': '))
     app.logger.debug(response)
     return response
+
+def checkDet(matrix):
+    try:
+        matrix.det()
+
+    except ValueError:
+        return false
+
+    return true
 
 if __name__ == ("__main__"):
     app.run(debug=True,host='0.0.0.0',port=int(os.environ.get("PORT", 5001)))

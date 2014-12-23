@@ -81,19 +81,32 @@
         </form>
         <button ng-click = "displayMatrix()" type = "button" class = "btn btn-primary matrixButtons">RREF it!</button>
         <button ng-click = "isSizeSet = !isSizeSet" type = "button" class = "btn btn-default matrixButtons">Change Size</button>
-        <table id = "MatrixRREF" ng-if = "renderedMatrix != null" align = "center">
+        <table id = "MatrixRREF" ng-if = "response != null" align = "center">
           <tr>
             <th>Original Matrix</th>
             <th>Matrix in RREF</th>
           </tr>
-          <tr ng-if = "det">
-            <td>Determinant {[{det}]}</td>
-            <td>Determinant {[{rrefDet}]}</td>
+          <tr ng-if = "response.det">
+            <td>Determinant {[{response.det}]}</td>
+            <td>Determinant {[{response.rrefDet}]}</td>
           </tr>
           <tr>
-            <td>{[{renderedMatrix}]}</td>
-            <td>{[{rrefMatrix}]}</td>
+            <td>{[{response.original}]}</td>
+            <td>{[{response.rref}]}</td>
           </tr>
+          <tr>
+            <td>{[{response.transpose}]}</td>
+            <td>{[{response.rrefTranspose}]}</td>
+          </tr>
+          <div ng-if = "response.inverse">
+          <tr>
+            <th colspan = "2">Inverse and its Transpose</th>
+          </tr>
+          <tr>
+            <td>{[{response.inverse}]}</td>
+            <td>{[{response.inverseTranspose}]}</td>
+          </tr>
+          </div>
         </table>
       </div>
       <div class = "row">

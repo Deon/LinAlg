@@ -22,22 +22,12 @@ app.config(function($interpolateProvider) {
 app.controller('MainController', function($scope, $http){
 
   $scope.isError = null;
-  $scope.renderedMatrix = null;
-  $scope.rrefmatrix = null;
   $scope.rows = null;
   $scope.cols = null;
   $scope.isSizeSet = false;
   $scope.inputMatrix = null;
   $scope.error = null;
-  $scope.det = null;
-  $scope.rrefDet = null;
-
-  var nullVars = function(){
-  $scope.renderedMatrix = null;
-  $scope.rrefmatrix = null;
-  $scope.det = null;
-  $scope.rrefDet = null;
-  };
+  $scope.response = null;
 
   var checkMatrix = function(){
     for (var i = 0; i < $scope.rows; i++){
@@ -62,16 +52,8 @@ app.controller('MainController', function($scope, $http){
     if ($scope.error == null) {
       $http.post('/getReducedMatrix/', $scope.inputMatrix)
       .then(function (matrix) {
-        console.log(matrix.data);
-        $scope.renderedMatrix = matrix.data[0];
-        $scope.rrefMatrix = matrix.data[1];
-
-        //Provide dets only for square matrices (col == row)
-        if ($scope.rows == $scope.cols) {
-          $scope.det = matrix.data[2];
-          $scope.rrefDet = matrix.data[3];
-        }
-        //$scope.null = matrix.data[4];
+        console.log(matrix);
+        $scope.response = matrix.data;
 
         //Delay output by a bit so that output is rendered properly.
         setTimeout(function () {
@@ -105,7 +87,7 @@ app.controller('MainController', function($scope, $http){
       console.log($scope.inputMatrix);
     }
     console.log($scope.error);
-    nullVars();
+    $scope.response = null;
   };
 
   //Returns array for looping.
