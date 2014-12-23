@@ -1,7 +1,12 @@
 LinAlg
 =============
-A webapp for linear algebra!
-Currently reduces matrices to RREF using the Sympy library.
-Provides determinants for square matrices.
-
-Powered by AngularJS, Bootstrap, Flask, Python, and Sympy!
+<p>The LinAlg Toolkit is a quick helper for linear algebra! Here's what it does so far:
+</p>
+<ul>
+  <li>RREFs Matrices</li>
+  <li>Transposes</li>
+  <li>Determinants</li>
+  <li>Inverse Matrices</li>
+</ul>
+<p>Developed with AngularJS, MathJax, Flask, Sympy, and Python.</p>
+<p id = "footer">Made with love.</p>
