@@ -102,16 +102,14 @@
             <td>{[{response.transpose}]}</td>
             <td>{[{response.rrefTranspose}]}</td>
           </tr>
-          <div ng-if = "response.inverse">
-          <tr>
+          <tr ng-if = "response.inverse">
             <th>Inverse</th>
             <th>Inverse Transpose</th>
           </tr>
-          <tr>
+          <tr ng-if = "response.inverse">
             <td>{[{response.inverse}]}</td>
             <td>{[{response.inverseTranspose}]}</td>
           </tr>
-          </div>
         </table>
       </div>
       <div class = "row">
