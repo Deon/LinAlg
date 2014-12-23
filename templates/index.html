@@ -85,30 +85,27 @@
           <tr>
             <th>Original Matrix</th>
             <th>Matrix in RREF</th>
+            <th ng-if = "response.inverse">Inverse</th>
           </tr>
           <tr ng-if = "rows == cols">
             <td>Determinant {[{response.det}]}</td>
             <td>Determinant {[{response.rrefDet}]}</td>
+            <td ng-if = "response.inverse">Determinant {[{response.inverseDet}]}</td>
           </tr>
           <tr>
-            <td>{[{response.original}]}</td>
-            <td>{[{response.rref}]}</td>
+            <td id = "matrixMath">{[{response.original}]}</td>
+            <td id = "matrixMath">{[{response.rref}]}</td>
+            <td id = "matrixMath" ng-if = "response.inverse">{[{response.inverse}]}</td>
           </tr>
           <tr>
             <th>Transpose</th>
             <th>RREF Transpose</th>
+            <th ng-if = "response.inverse">Inverse Transpose</th>
           </tr>
           <tr>
-            <td>{[{response.transpose}]}</td>
-            <td>{[{response.rrefTranspose}]}</td>
-          </tr>
-          <tr ng-if = "response.inverse">
-            <th>Inverse</th>
-            <th>Inverse Transpose</th>
-          </tr>
-          <tr ng-if = "response.inverse">
-            <td>{[{response.inverse}]}</td>
-            <td>{[{response.inverseTranspose}]}</td>
+            <td id = "matrixMath">{[{response.transpose}]}</td>
+            <td id = "matrixMath">{[{response.rrefTranspose}]}</td>
+            <td id = "matrixMath" ng-if = "response.inverse">{[{response.inverseTranspose}]}</td>
           </tr>
         </table>
       </div>

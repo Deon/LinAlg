@@ -32,7 +32,7 @@ def getMatrix():
         if matrix.det() and rrefmatrix.det():
             dict["inverse"] = latex(matrix**-1, mode="equation", itex = True)
             dict["inverseTranspose"] = latex((matrix**-1).T, mode="equation", itex = True)
-
+            dict["inverseDet"] = str((matrix**-1).det())
 
 
     app.logger.debug(dict)

@@ -46,7 +46,6 @@ app.controller('MainController', function($scope, $http){
   };
   $scope.displayMatrix = function(){
     console.log($scope.inputMatrix);
-
     checkMatrix();
 
     if ($scope.error == null) {
@@ -57,7 +56,14 @@ app.controller('MainController', function($scope, $http){
 
         //Delay output by a bit so that output is rendered properly.
         setTimeout(function () {
+          var math = document.getElementById("matrixMath");
+          var mathElements = MathJax.Hub.getAllJax("matrixMath");
           MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+          //MathJax.Hub.Queue(["Update", MathJax.Hub]);
+          //MathJax.Hub.Queue(["Reprocess", MathJax.Hub]);
+          MathJax.Hub.Update([math [["Typeset", MathJax.Hub]]]);
+          MathJax.Hub.Reprocess([math [["Typeset", MathJax.Hub]]]);
+          MathJax.Hub.Rerender([math [["Typeset", MathJax.Hub]]]);
         });
       });
     }
