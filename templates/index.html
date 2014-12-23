@@ -86,7 +86,7 @@
             <th>Original Matrix</th>
             <th>Matrix in RREF</th>
           </tr>
-          <tr ng-if = "response.det">
+          <tr ng-if = "rows == cols">
             <td>Determinant {[{response.det}]}</td>
             <td>Determinant {[{response.rrefDet}]}</td>
           </tr>
@@ -105,7 +105,7 @@
           <div ng-if = "response.inverse">
           <tr>
             <th>Inverse</th>
-            <th>Inverse Tranpose</th>
+            <th>Inverse Transpose</th>
           </tr>
           <tr>
             <td>{[{response.inverse}]}</td>
