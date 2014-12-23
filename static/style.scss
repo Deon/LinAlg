@@ -1,13 +1,11 @@
 
 //----------- COLOUR PALETTE ---------------
-
 //B/W Hues
 $white: #FFFFFF;
 $lightGrey: #B0B0B0;
 $Grey: #808080;
 $darkGrey: #505050;
 $black: #000000;
-
 
 //Primary Palette - Amber 50, 100, 500, 700
 $background: #FFF8E1;
@@ -24,7 +22,7 @@ $darkGreen: #00C853;
 $lightPurple: #B39DDB;
 $Purple: #673AB7;
 $darkPurple: #512DA8;
-//------------ END COLOUR PALETTE
+//----------- END COLOUR PALETTE -----------
 
 /* Navbar stuff. */
 .navbar-default{
@@ -33,8 +31,7 @@ $darkPurple: #512DA8;
   border: 0;
   color: $white;
 
-  /* Navbar button on mobile. */
-
+  // Navbar button on mobile.
   .navbar-toggle, .navbar-toggle:focus{
     background-color: $darkAmber;
     color: inherit;
@@ -49,7 +46,7 @@ $darkPurple: #512DA8;
     }
   }
 
-  /*Branding*/
+  // Branding
   .navbar-brand{
     font-size: 1.4em;
     color: inherit;
@@ -89,19 +86,9 @@ $darkPurple: #512DA8;
   text-align: center;
 }
 
-.inputField{
-  border-radius: 0;
-  height: 40px;
-  font-size: 20px;
-}
-
 .matrixField{
-  border-radius: 0;
-  height: 40px;
-  font-size: 20px;
   max-width: 70px;
 }
-
 
 #footer{
   margin-top: 20px;
@@ -117,9 +104,7 @@ $darkPurple: #512DA8;
   text-align: left;
 }
 td, th{
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
+  padding: 5px;
   text-align: center;
 }
 
@@ -129,12 +114,12 @@ td.matrixElement{
 }
 
 table{
-  padding-top: 20px;
-}
-form{
-  padding-bottom: 20px;
+  margin-top: 10px;
 }
 
+.form-group{
+  margin-bottom: 10px;
+}
 body{
   background-color: $background;
 }
@@ -143,21 +128,17 @@ li{
   text-align: left;
 }
 .bg-danger{
-  padding: 10px 5px 10px 10px;
+  padding: 10px;
+  border: 0;
   border-radius: 1px;
 }
-.btn{
+.btn-lg, .input-lg{
   border-radius: 0;
-  height: 40px;
-  font-size: 20px;
 }
 
 .btn-primary, .btn-primary:focus{
   background-color: $darkAmber;
   border-color: $Amber;
-  border-radius: 0;
-  height: 40px;
-  font-size: 20px;
   &:hover{
     background-color: $Amber;
     border-color: $darkAmber;
@@ -165,5 +146,5 @@ li{
 }
 
 .matrixButtons{
-  margin-bottom: 10px;
+  margin-top: 10px;
 }

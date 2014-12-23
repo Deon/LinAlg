@@ -11,11 +11,12 @@
   <link href='http://fonts.googleapis.com/css?family=Roboto:500,400' rel='stylesheet' type='text/css'>
 
   <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-  <script src="/static/angular.min.js"></script>
-  <script src="/static/ui-bootstrap-tpls-0.11.2.min.js"></script>
-  <script src="/static/script.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" type="text/javascript"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js" type="text/javascript"></script>
+  <script src="/static/ui-bootstrap-tpls-0.11.2.min.js" type="text/javascript"></script>
+  <script src="/static/script.js" type="text/javascript"></script>
 </head>
 
 <!--Navbar-->
@@ -46,44 +47,42 @@
 <body ng-controller="MainController">
 <div class = "container-fluid">
   <div class = "row">
-    <!-- Matrix Stuff -->
     <div class = "col-md-8 col-md-offset-2">
-      <h2>RREFit</h2>
+      <h2>Matrix Reducer</h2>
 
       <form class="form" role="form" ng-show = "isSizeSet == false">
         <p>Enter the size of your matrix.</p>
         <div class="form-group">
           <div class = "row">
             <div class = "col-xs-6 col-md-3 col-md-offset-2">
-              <input class="form-control inputField" placeholder="Rows" ng-model = "rows" >
+              <input class="form-control input-lg" placeholder="Rows" ng-model = "rows" >
             </div>
             <div class = "col-xs-6 col-md-3">
-              <input class="form-control inputField" placeholder="Columns" ng-model = "cols">
+              <input class="form-control input-lg" placeholder="Columns" ng-model = "cols">
             </div>
             <div class = "col-xs-6 col-xs-offset-3 col-md-2 col-md-offset-0">
-              <button type="submit" class="btn btn-primary submit" ng-click = setSize()>Set Size!</button>
+              <button type="submit" class="btn btn-lg btn-primary submit" ng-click = setSize()>Set Size!</button>
             </div>
           </div>
         </div>
       </form>
 
-      <div id = "matrixEntry" ng-show = "isSizeSet == true">
+      <div ng-show = "isSizeSet == true">
         <p>Enter your matrix!</p>
-        <form class="form-inline" role="form">
+        <form class="form" role="form">
           <div class="form-group">
             <table align = "center">
               <tr ng-repeat = "row in getRows() track by $index">
                 <td class = "matrixElement" ng-repeat = "col in getCols() track by $index" >
-                  <input class="form-control matrixField" ng-model = "inputMatrix[$parent.$index][$index]">
+                  <input class="form-control input-lg matrixField" ng-model = "inputMatrix[$parent.$index][$index]">
                 </td>
               </tr>
             </table>
+            <button ng-click = "displayMatrix()" type = "button" class = "btn btn-lg btn-primary matrixButtons">RREF it!</button>
+            <button ng-click = "isSizeSet = !isSizeSet" type = "button" class = "btn btn-lg btn-default matrixButtons">Change Size</button>
           </div>
-          <br>
         </form>
-        <button ng-click = "displayMatrix()" type = "button" class = "btn btn-primary matrixButtons">RREF it!</button>
-        <button ng-click = "isSizeSet = !isSizeSet" type = "button" class = "btn btn-default matrixButtons">Change Size</button>
-        <table id = "MatrixRREF" ng-if = "response != null" align = "center">
+        <table ng-if = "response != null" align = "center">
           <tr>
             <th>Original Matrix</th>
             <th>Matrix in RREF</th>
@@ -95,9 +94,9 @@
             <td ng-if = "response.inverse">Determinant {[{response.inverseDet}]}</td>
           </tr>
           <tr>
-            <td id = "matrixMath">{[{response.original}]}</td>
-            <td id = "matrixMath">{[{response.rref}]}</td>
-            <td id = "matrixMath" ng-if = "response.inverse">{[{response.inverse}]}</td>
+            <td>{[{response.original}]}</td>
+            <td>{[{response.rref}]}</td>
+            <td ng-if = "response.inverse">{[{response.inverse}]}</td>
           </tr>
           <tr>
             <th>Transpose</th>
@@ -105,9 +104,9 @@
             <th ng-if = "response.inverse">Inverse Transpose</th>
           </tr>
           <tr>
-            <td id = "matrixMath">{[{response.transpose}]}</td>
-            <td id = "matrixMath">{[{response.rrefTranspose}]}</td>
-            <td id = "matrixMath" ng-if = "response.inverse">{[{response.inverseTranspose}]}</td>
+            <td>{[{response.transpose}]}</td>
+            <td>{[{response.rrefTranspose}]}</td>
+            <td ng-if = "response.inverse">{[{response.inverseTranspose}]}</td>
           </tr>
         </table>
       </div>

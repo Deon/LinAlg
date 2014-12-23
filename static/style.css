@@ -4,8 +4,6 @@
   background-color: #FFA000;
   border: 0;
   color: #FFFFFF;
-  /* Navbar button on mobile. */
-  /*Branding*/
   /*Other Links*/
   /*Currently active links */ }
   .navbar-default .navbar-toggle, .navbar-default .navbar-toggle:focus {
@@ -40,15 +38,7 @@
   font-family: sans-serif;
   text-align: center; }
 
-.inputField {
-  border-radius: 0;
-  height: 40px;
-  font-size: 20px; }
-
 .matrixField {
-  border-radius: 0;
-  height: 40px;
-  font-size: 20px;
   max-width: 70px; }
 
 #footer {
@@ -63,9 +53,7 @@
   text-align: left; }
 
 td, th {
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
+  padding: 5px;
   text-align: center; }
 
 td.matrixElement {
@@ -73,10 +61,10 @@ td.matrixElement {
   text-align: center; }
 
 table {
-  padding-top: 20px; }
+  margin-top: 10px; }
 
-form {
-  padding-bottom: 20px; }
+.form-group {
+  margin-bottom: 10px; }
 
 body {
   background-color: #FFF8E1; }
@@ -85,25 +73,21 @@ li {
   text-align: left; }
 
 .bg-danger {
-  padding: 10px 5px 10px 10px;
+  padding: 10px;
+  border: 0;
   border-radius: 1px; }
 
-.btn {
-  border-radius: 0;
-  height: 40px;
-  font-size: 20px; }
+.btn-lg, .input-lg {
+  border-radius: 0; }
 
 .btn-primary, .btn-primary:focus {
   background-color: #FFA000;
-  border-color: #FFC107;
-  border-radius: 0;
-  height: 40px;
-  font-size: 20px; }
+  border-color: #FFC107; }
   .btn-primary:hover, .btn-primary:focus:hover {
     background-color: #FFC107;
     border-color: #FFA000; }
 
 .matrixButtons {
-  margin-bottom: 10px; }
+  margin-top: 10px; }
 
 /*# sourceMappingURL=style.css.map */
