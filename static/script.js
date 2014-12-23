@@ -1,7 +1,3 @@
-/**
- * Created by Owner on 11/21/2014.
- */
-
 //MathJax Configuration
 MathJax.Hub.Config({
   jax: ["input/TeX", "output/HTML-CSS","output/NativeMML"],
@@ -11,7 +7,7 @@ MathJax.Hub.Config({
 });
 
 //Declare module
-var app = angular.module('LinAlgToolkit', ['ui.bootstrap']);
+var app = angular.module('LinAlgToolkit', []);
 
 app.config(function($interpolateProvider) {
   $interpolateProvider.startSymbol('{[{');
@@ -20,8 +16,6 @@ app.config(function($interpolateProvider) {
 
 
 app.controller('MainController', function($scope, $http){
-
-  $scope.isError = null;
   $scope.rows = null;
   $scope.cols = null;
   $scope.isSizeSet = false;
@@ -29,38 +23,6 @@ app.controller('MainController', function($scope, $http){
   $scope.error = null;
   $scope.response = null;
 
-  var checkMatrix = function(){
-    for (var i = 0; i < $scope.rows; i++){
-      for (var j = 0; j < $scope.cols; j++){
-        if ($scope.inputMatrix[i][j] == "" || $scope.inputMatrix[i][j] == undefined || $scope.inputMatrix[i][j] == null){
-          $scope.error = "Make sure you fill everything in!";
-          return;
-        }
-        if (isNaN($scope.inputMatrix[i][j])){
-          $scope.error = "Enter only numbers please!";
-          return;
-        }
-      }
-    }
-    $scope.error = null;
-  };
-  $scope.displayMatrix = function(){
-    console.log($scope.inputMatrix);
-    checkMatrix();
-    $scope.response = null;
-    if ($scope.error == null) {
-      $http.post('/getReducedMatrix/', $scope.inputMatrix)
-      .then(function (matrix) {
-        console.log(matrix);
-        $scope.response = matrix.data;
-        console.log($scope.response.original);
-        //Delay output by a bit so that output is rendered properly.
-        setTimeout(function () {
-          MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-        });
-      });
-    }
-  };
 
 
   $scope.setSize = function() {
@@ -70,7 +32,6 @@ app.controller('MainController', function($scope, $http){
     if (isNaN($scope.rows) || isNaN($scope.cols)){
       $scope.error = "That isn't a number!";
     }
-
     else if (($scope.rows == null || $scope.rows == undefined || $scope.rows == "") || ($scope.cols == null
         || $scope.cols == undefined || $scope.cols == "")){
       $scope.error = "You should enter something!";
@@ -89,6 +50,24 @@ app.controller('MainController', function($scope, $http){
     $scope.response = null;
   };
 
+  $scope.displayMatrix = function(){
+    console.log($scope.inputMatrix);
+    checkMatrix();
+    $scope.response = null;
+    if ($scope.error == null) {
+      $http.post('/getReducedMatrix/', $scope.inputMatrix)
+      .then(function (matrix) {
+        console.log(matrix);
+        $scope.response = matrix.data;
+        console.log($scope.response.original);
+        //Delay output by a bit so that output is rendered properly.
+        setTimeout(function () {
+          MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        });
+      });
+    }
+  };
+
   //Returns array for looping.
   $scope.getRows = function(){
     if ($scope.rows && !isNaN($scope.rows)) return new Array(parseInt($scope.rows));
@@ -99,6 +78,23 @@ app.controller('MainController', function($scope, $http){
     if ($scope.cols && !isNaN($scope.cols)) return new Array(parseInt($scope.cols));
     else return 0;
   };
+
+  var checkMatrix = function(){
+    for (var i = 0; i < $scope.rows; i++){
+      for (var j = 0; j < $scope.cols; j++){
+        if ($scope.inputMatrix[i][j] == "" || $scope.inputMatrix[i][j] == undefined || $scope.inputMatrix[i][j] == null){
+          $scope.error = "Make sure you fill everything in!";
+          return;
+        }
+        if (isNaN($scope.inputMatrix[i][j])){
+          $scope.error = "Enter only numbers please!";
+          return;
+        }
+      }
+    }
+    $scope.error = null;
+  };
+
 
 
 });

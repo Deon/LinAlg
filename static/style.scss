@@ -18,10 +18,6 @@ $lightGreen: #69F0AE;
 $Green: #00E676;
 $darkGreen: #00C853;
 
-//Backup Palette - Deep Purple 200, 500, 800
-$lightPurple: #B39DDB;
-$Purple: #673AB7;
-$darkPurple: #512DA8;
 //----------- END COLOUR PALETTE -----------
 
 /* Navbar stuff. */
@@ -82,12 +78,12 @@ $darkPurple: #512DA8;
 } 
 
 * {
-  font-family: sans-serif;
+  font-family: Arial, sans-serif;
   text-align: center;
 }
 
-.matrixField{
-  max-width: 70px;
+body{
+  background-color: $background;
 }
 
 #footer{
@@ -96,16 +92,8 @@ $darkPurple: #512DA8;
   text-align: center;
 }
 
-.col-xs-6{
-  padding-top: 10px;
-}
-
-.about-page > .row > .col-xs-12 > h1, .about-page > .row > .col-xs-12 > p{
-  text-align: left;
-}
-td, th{
-  padding: 5px;
-  text-align: center;
+.matrixField{
+  max-width: 70px;
 }
 
 td.matrixElement{
@@ -117,21 +105,34 @@ table{
   margin-top: 10px;
 }
 
-.form-group{
-  margin-bottom: 10px;
+td, th{
+  padding: 5px;
+  text-align: center;
 }
-body{
-  background-color: $background;
+
+.col-xs-6{
+  padding-top: 10px;
+}
+
+.about-page > .row > .col-md-8 > h1, .about-page > .row > .col-md-8 > p{
+  text-align: left;
 }
 
 li{
   text-align: left;
 }
+
+
+.form-group{
+  margin-bottom: 10px;
+}
+
 .bg-danger{
   padding: 10px;
   border: 0;
   border-radius: 1px;
 }
+
 .btn-lg, .input-lg{
   border-radius: 0;
 }

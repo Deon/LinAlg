@@ -35,26 +35,19 @@
       background-color: #FFC107; }
 
 * {
-  font-family: sans-serif;
+  font-family: Arial, sans-serif;
   text-align: center; }
 
-.matrixField {
-  max-width: 70px; }
+body {
+  background-color: #FFF8E1; }
 
 #footer {
   margin-top: 20px;
   color: #808080;
   text-align: center; }
 
-.col-xs-6 {
-  padding-top: 10px; }
-
-.about-page > .row > .col-xs-12 > h1, .about-page > .row > .col-xs-12 > p {
-  text-align: left; }
-
-td, th {
-  padding: 5px;
-  text-align: center; }
+.matrixField {
+  max-width: 70px; }
 
 td.matrixElement {
   padding: 0;
@@ -63,14 +56,21 @@ td.matrixElement {
 table {
   margin-top: 10px; }
 
-.form-group {
-  margin-bottom: 10px; }
+td, th {
+  padding: 5px;
+  text-align: center; }
 
-body {
-  background-color: #FFF8E1; }
+.col-xs-6 {
+  padding-top: 10px; }
+
+.about-page > .row > .col-md-8 > h1, .about-page > .row > .col-md-8 > p {
+  text-align: left; }
 
 li {
   text-align: left; }
+
+.form-group {
+  margin-bottom: 10px; }
 
 .bg-danger {
   padding: 10px;
