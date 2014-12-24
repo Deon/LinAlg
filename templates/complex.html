@@ -55,36 +55,33 @@
       <div class = "tab-content">
         <div role = "tabpanel" class = "tab-pane fade in active" id = "converter">
           <h2>Rectangular-Polar Converter</h2>
-          <form class = "form form-inline">
-            <div class = "form-group">
-              <table class = "table table-responsive">
-                <tr>
-                  <td class = "complex-text">Rectangular (a+bi)</td>
-                  <td class = "complex-text">to</td>
-                  <td class = "complex-text">Polar Form (r cisθ)</td>
-                </tr>
-                <tr>
-                  <td>
-                    <input class = "form-control input-lg complexInput" placeholder = "Real" ng-model = "real" ng-change = "toPolar()">
-                    <span class = "complex-text"> + </span>
-                    <input class = "form-control input-lg complexInput" placeholder = "Imaginary" ng-model = "imaginary" ng-change = "toPolar()">
-                    <span class = "complex-text">i</span>
-                  </td>
-                  <td id = "equal">
-                    <span class = "complex-text"> = </span>
-                  </td>
-                  <td>
-                    <input class = "form-control input-lg complexInput" placeholder = "Magnitude" ng-model = "magnitude" ng-change = "toRectangular()">
-                    <span class = "complex-text"> cis </span>
-                    <input class = "form control input-lg complexInput" placeholder = "Argument" ng-model = "argument" ng-change ="toRectangular()">
-                    <button class = "btn btn-lg btn-primary" type = "button" ng-click = "changeUnits()" ng-show = "degrees">Degrees</button>
-                    <button class = "btn btn-lg btn-primary" type = "button" ng-click = "changeUnits()" ng-show = "!degrees">Radians</button>
-                  </td>
-                </tr>
 
-              </table>
-            </div>
-          </form>
+          <table class = "table table-responsive">
+            <tr>
+              <td class = "complex-text">Rectangular (a+bi)</td>
+              <td class = "complex-text">to</td>
+              <td class = "complex-text">Polar Form (r cisθ)</td>
+            </tr>
+            <tr>
+              <td>
+                <input class = "form-control input-lg complexInput" placeholder = "Real" ng-model = "real" ng-change = "toPolar()">
+                <span class = "complex-text"> + </span>
+                <input class = "form-control input-lg complexInput" placeholder = "Imaginary" ng-model = "imaginary" ng-change = "toPolar()">
+                <span class = "complex-text">i</span>
+              </td>
+              <td id = "equal">
+                <span class = "complex-text"> = </span>
+              </td>
+              <td>
+                <input class = "form-control input-lg complexInput" placeholder = "Magnitude" ng-model = "magnitude" ng-change = "toRectangular()">
+                <span class = "complex-text"> cis </span>
+                <input class = "form-control input-lg complexInput" placeholder = "Argument" ng-model = "argument" ng-change ="toRectangular()">
+                <button class = "btn btn-lg btn-primary" type = "button" ng-click = "changeUnits()" ng-show = "degrees">Degrees</button>
+                <button class = "btn btn-lg btn-primary" type = "button" ng-click = "changeUnits()" ng-show = "!degrees">Radians</button>
+              </td>
+            </tr>
+          </table>
+
         <div class = "row">
           <div class = "col-md-4 col-md-offset-4">
             <p class = "bg-danger" ng-show = "error != null">{[{error}]}</p>
