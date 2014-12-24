@@ -7,10 +7,11 @@ $Grey: #808080;
 $darkGrey: #505050;
 $black: #000000;
 
-//Primary Palette - Amber 50, 100, 500, 700
+//Primary Palette - Amber 50, 100, 500, 600, 700
 $background: #FFF8E1;
 $lightAmber: #FFECB3;
 $Amber: #FFC107;
+$medAmber: #FFB300;
 $darkAmber: #FFA000;
 
 //Secondary Palette - Green A200, A400, A700
@@ -63,6 +64,7 @@ $darkGreen: #00C853;
 
     &:hover {
       color: $Grey;
+      background-color: $medAmber;
     }
   }
   /*Currently active links */
