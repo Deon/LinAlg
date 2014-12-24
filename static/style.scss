@@ -139,6 +139,7 @@ li{
   border-radius: 0;
 }
 
+
 .btn-primary, .btn-primary:focus{
   background-color: $darkAmber;
   border-color: $Amber;
@@ -150,4 +151,42 @@ li{
 
 .matrixButtons{
   margin-top: 10px;
+}
+
+/* Pills */
+.nav-pills>li>a{
+  font-size: 1.1em;
+  border-radius: 0;
+  color: $darkAmber;
+  &:hover{
+    background-color: $lightAmber;
+  }
+}
+
+.nav-pills>li.active>a{
+  background-color: $darkAmber;
+  &:hover{
+    background-color: $darkAmber;
+  }
+  &:focus{
+    background-color: $darkAmber;
+  }
+}
+
+.complex-text{
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+span.complex-text{
+  display: inline;
+}
+#equal{
+  padding-top: 18px;
+}
+.complexInput{
+  max-width: 175px;
+  display: inline;
+  vertical-align: middle;
+  width: auto;
 }

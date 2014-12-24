@@ -16,6 +16,10 @@ def hello():
 def about():
     return render_template("about.html")
 
+@app.route("/complex.html")
+def complex():
+    return render_template("complex.html")
+
 @app.route("/getReducedMatrix/", methods = ["POST"])
 def getMatrix():
     entries = request.get_json()

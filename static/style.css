@@ -91,4 +91,35 @@ li {
 .matrixButtons {
   margin-top: 10px; }
 
+/* Pills */
+.nav-pills > li > a {
+  font-size: 1.1em;
+  border-radius: 0;
+  color: #FFA000; }
+  .nav-pills > li > a:hover {
+    background-color: #FFECB3; }
+
+.nav-pills > li.active > a {
+  background-color: #FFA000; }
+  .nav-pills > li.active > a:hover {
+    background-color: #FFA000; }
+  .nav-pills > li.active > a:focus {
+    background-color: #FFA000; }
+
+.complex-text {
+  font-size: 20px;
+  vertical-align: middle; }
+
+span.complex-text {
+  display: inline; }
+
+#equal {
+  padding-top: 18px; }
+
+.complexInput {
+  max-width: 175px;
+  display: inline;
+  vertical-align: middle;
+  width: auto; }
+
 /*# sourceMappingURL=style.css.map */

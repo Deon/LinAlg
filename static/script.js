@@ -15,15 +15,13 @@ app.config(function($interpolateProvider) {
 });
 
 
-app.controller('MainController', function($scope, $http){
+app.controller('MatrixController', function($scope, $http){
   $scope.rows = null;
   $scope.cols = null;
   $scope.isSizeSet = false;
   $scope.inputMatrix = null;
   $scope.error = null;
   $scope.response = null;
-
-
 
   $scope.setSize = function() {
     console.log($scope.rows);
@@ -94,7 +92,100 @@ app.controller('MainController', function($scope, $http){
     }
     $scope.error = null;
   };
+});
 
+app.controller("ComplexController", function($scope){
+  $scope.real = null;
+  $scope.imaginary = null;
+  $scope.magnitude = null;
+  $scope.argument = null;
+  $scope.degrees = true;
+  $scope.error = null;
+  $scope.decimalPlaces = 4;
 
+  $scope.toPolar = function(){
+    //Error Handling
 
+    if ($scope.real == null)
+      $scope.real = 0;
+    if ($scope.imaginary == null)
+      $scope.imaginary = 0;
+
+    if (isNaN($scope.real) || isNaN($scope.imaginary))
+      $scope.error = "Please enter numbers only!";
+    else
+      $scope.error = null;
+    //Math
+    if (!$scope.error){
+      //Magnitude
+      $scope.magnitude = Math.sqrt(Math.pow($scope.real, 2)+Math.pow($scope.imaginary, 2)).toFixed($scope.decimalPlaces);
+
+      //Argument
+      if ($scope.degrees)
+        $scope.argument = toDeg(calculateArgument()).toFixed($scope.decimalPlaces);
+      else
+        $scope.argument = calculateArgument().toFixed($scope.decimalPlaces);
+    }
+  };
+
+  $scope.changeUnits = function(){
+    $scope.degrees = !$scope.degrees;
+    if ($scope.degrees)
+      $scope.argument = toDeg(calculateArgument()).toFixed($scope.decimalPlaces);
+    else
+      $scope.argument = calculateArgument().toFixed($scope.decimalPlaces);
+  };
+  //Returns argument in radians.
+  var calculateArgument = function(){
+    if ($scope.real == 0){
+      if ($scope.imaginary == 0)
+        return 0;
+      else if ($scope.imaginary > 0)
+        return Math.PI/2;
+      else
+        return Math.PI*3/2;
+    }
+    else if ($scope.imaginary == 0){
+      if ($scope.real == 0)
+        return 0;
+      else if ($scope.real > 0)
+        return 0;
+      else if ($scope.real < 0)
+        return Math.PI;
+    }
+    else
+      return Math.atan2($scope.imaginary, $scope.real)
+  };
+  var toDeg = function (radians){
+    return radians * 180 / Math.PI;
+  };
+
+  var toRad = function(degrees){
+    return degrees * Math.PI/180;
+  };
+
+  $scope.toRectangular = function(){
+    //Error checking
+    if ($scope.magnitude == null)
+      $scope.magnitude = 0;
+    if ($scope.argument == null)
+      $scope.argument = 0;
+
+    if (isNaN($scope.magnitude) || isNaN($scope.argument))
+      $scope.error = "Please enter numbers only!";
+    else
+      $scope.error = null;
+    //Math
+
+    if (!$scope.error) {
+      if ($scope.degrees) {
+        $scope.real = (Math.cos(toRad($scope.argument)) * $scope.magnitude).toFixed($scope.decimalPlaces);
+        $scope.imaginary = (Math.sin(toRad($scope.argument)) * $scope.magnitude).toFixed($scope.decimalPlaces);
+      }
+      else {
+        $scope.real = (Math.cos($scope.argument) * $scope.magnitude).toFixed($scope.decimalPlaces);
+        $scope.imaginary = (Math.sin($scope.argument) * $scope.magnitude).toFixed($scope.decimalPlaces);
+      }
+    }
+  };
 });

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>LinAlg | Home</title>
+  <title>LinAlg | Matrices</title>
 
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="/static/style.css">
@@ -30,23 +30,22 @@
     </button>
     <a class="navbar-brand" href="/">LinAlg Alpha</a>
   </div>
-
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li class="active"><a href="/" class = "active">Home<span class="sr-only">(current)</span></a></li>
+      <li class="active"><a href="/" class = "active">Matrices<span class="sr-only">(current)</span></a></li>
+      <li><a href = "/complex.html">Complex Numbers</a></li>
       <li><a href="/about.html">About</a></li>
     </ul>
   </div>
 </div>
 </nav>
 
-<body ng-controller="MainController">
+<body ng-controller="MatrixController">
 <div class = "container-fluid">
   <div class = "row">
     <div class = "col-md-8 col-md-offset-2">
       <h2>Matrix Reducer</h2>
-
       <form class="form" role="form" ng-show = "isSizeSet == false">
         <p>Enter the size of your matrix.</p>
         <div class="form-group">
@@ -107,6 +106,7 @@
           </tr>
         </table>
       </div>
+
       <div class = "row">
         <div class = "col-md-4 col-md-offset-4">
           <p class = "bg-danger" ng-show = "error != null">{[{error}]}</p>
