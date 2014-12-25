@@ -91,17 +91,17 @@
           <p>For multiplication, simply multiply the magnitudes and add the arguments. For division, divide the magnitudes and subtract the arguments.</p>
           <form class = "form form-inline">
             <div class = "form-group">
-              <input class = "form-control input-lg operationInput" ng-model = "num1[0]" ng-change = "findAns()">
+              <input class = "form-control input-lg operationInput" placeholder = "Real" ng-model = "num1[0]" ng-change = "findAns()">
               <span class = "complex-text"> + </span>
-              <input class = "form-control input-lg operationInput" ng-model = "num1[1]" ng-change = "findAns()">
+              <input class = "form-control input-lg operationInput" placeholder = "Imaginary" ng-model = "num1[1]" ng-change = "findAns()">
               <span class = "complex-text">i</span>
               <select class = "form-control" id = "sign" ng-model = "operation" ng-change = "findAns()">
                 <option value = "x">×</option>
                 <option value = "/">÷</option>
               </select>
-              <input class = "form-control input-lg operationInput" ng-model = "num2[0]" ng-change = "findAns()">
+              <input class = "form-control input-lg operationInput" placeholder = "Real" ng-model = "num2[0]" ng-change = "findAns()">
               <span class = "complex-text"> + </span>
-              <input class = "form-control input-lg operationInput" ng-model = "num2[1]" ng-change = "findAns()">
+              <input class = "form-control input-lg operationInput" placeholder = "Imaginary" ng-model = "num2[1]" ng-change = "findAns()">
               <span class = "complex-text">i</span>
               <span class = "complex-text" ng-show = "ans[0] && ans[1]"> = {[{ans[0]}]} + {[{ans[1]}]}i</span>
             </div>

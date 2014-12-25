@@ -18,7 +18,6 @@ $darkAmber: #FFA000;
 $lightGreen: #69F0AE;
 $Green: #00E676;
 $darkGreen: #00C853;
-
 //----------- END COLOUR PALETTE -----------
 
 /* Navbar stuff. */
@@ -196,6 +195,8 @@ span.complex-text{
   display: inline;
   vertical-align: middle;
   width: auto;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 select.form-control{
   height: 46px;
