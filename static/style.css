@@ -117,9 +117,27 @@ span.complex-text {
   padding-top: 18px; }
 
 .complexInput {
-  max-width: 175px;
+  max-width: 150px;
   display: inline;
   vertical-align: middle;
   width: auto; }
+
+.operationInput {
+  max-width: 100px;
+  display: inline;
+  vertical-align: middle;
+  width: auto; }
+
+select.form-control {
+  height: 46px;
+  border-radius: 0;
+  font-size: 20px; }
+
+.error {
+  margin-top: 10px; }
+
+#sign {
+  margin-left: 20px;
+  margin-right: 20px; }
 
 /*# sourceMappingURL=style.css.map */

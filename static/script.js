@@ -94,7 +94,7 @@ app.controller('MatrixController', function($scope, $http){
   };
 });
 
-app.controller('ComplexController', function($scope){
+app.controller('ConversionController', function($scope){
   $scope.real = null;
   $scope.imaginary = null;
   $scope.magnitude = null;
@@ -190,6 +190,32 @@ app.controller('ComplexController', function($scope){
       else {
         $scope.real = (Math.cos($scope.argument) * $scope.magnitude).toFixed($scope.decimalPlaces);
         $scope.imaginary = (Math.sin($scope.argument) * $scope.magnitude).toFixed($scope.decimalPlaces);
+      }
+    }
+  };
+});
+
+app.controller('OperationsController', function($scope){
+  $scope.num1 = [null, null];
+  $scope.num2 = [null, null];
+  $scope.ans = [null, null];
+  $scope.operation = "x";
+  $scope.error = null;
+
+  $scope.findAns = function(){
+    if (isNaN($scope.num1[0]) || isNaN($scope.num2[0]) || isNaN($scope.num1[1]) || isNaN($scope.num2[1]))
+      $scope.error = "Enter numbers only please!";
+    else
+      $scope.error = null;
+
+    if (!$scope.error) {
+      if ($scope.operation == "x") {
+        $scope.ans[0] = $scope.num1[0] * $scope.num2[0] - $scope.num1[1] * $scope.num2[1];
+        $scope.ans[1] = $scope.num1[0] * $scope.num2[1] + $scope.num1[1] * $scope.num2[0];
+      }
+      else {
+        $scope.ans[0] = ($scope.num1[0] * $scope.num2[0] + $scope.num1[1] * $scope.num2[1]) / (Math.pow($scope.num2[0], 2) + Math.pow($scope.num2[1], 2));
+        $scope.ans[1] = ($scope.num1[1] * $scope.num2[0] - $scope.num1[0] * $scope.num2[1]);
       }
     }
   };
