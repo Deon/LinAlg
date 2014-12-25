@@ -23,6 +23,7 @@ app.controller('MatrixController', function($scope, $http){
   $scope.error = null;
   $scope.response = null;
 
+
   $scope.setSize = function() {
     console.log($scope.rows);
     console.log($scope.cols);
@@ -57,7 +58,6 @@ app.controller('MatrixController', function($scope, $http){
       .then(function (matrix) {
         console.log(matrix);
         $scope.response = matrix.data;
-        console.log($scope.response.original);
         //Delay output by a bit so that output is rendered properly.
         setTimeout(function () {
           MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
@@ -94,7 +94,7 @@ app.controller('MatrixController', function($scope, $http){
   };
 });
 
-app.controller("ComplexController", function($scope){
+app.controller('ComplexController', function($scope){
   $scope.real = null;
   $scope.imaginary = null;
   $scope.magnitude = null;
@@ -102,6 +102,7 @@ app.controller("ComplexController", function($scope){
   $scope.degrees = true;
   $scope.error = null;
   $scope.decimalPlaces = 4;
+  $scope.button = "Degrees";
 
   $scope.toPolar = function(){
     //Error Handling
@@ -130,10 +131,14 @@ app.controller("ComplexController", function($scope){
 
   $scope.changeUnits = function(){
     $scope.degrees = !$scope.degrees;
-    if ($scope.degrees)
+    if ($scope.degrees) {
       $scope.argument = toDeg(calculateArgument()).toFixed($scope.decimalPlaces);
-    else
+      $scope.button = "Degrees";
+    }
+    else {
       $scope.argument = calculateArgument().toFixed($scope.decimalPlaces);
+      $scope.button = "Radians";
+    }
   };
   //Returns argument in radians.
   var calculateArgument = function(){

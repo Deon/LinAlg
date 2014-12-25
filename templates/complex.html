@@ -48,8 +48,8 @@
       <ul class = "nav nav-pills">
         <li role = "presentation" class = "active"><a href = "#converter" aria-controls = "converter"
                                                       role = "tab" data-toggle = "pill">Rectangular-Polar Converter</a></li>
-        <!--<li role = "presentation"><a href = "#operations" aria-controls = "operations"
-                                     role = "tab" data-toggle = "pill">Complex Operations</a></li> -->
+        <li role = "presentation"><a href = "#operations" aria-controls = "operations"
+                                     role = "tab" data-toggle = "pill">Complex Operations</a></li>
       </ul>
 
       <div class = "tab-content">
@@ -58,7 +58,7 @@
 
           <table class = "table table-responsive">
             <tr>
-              <td class = "complex-text">Rectangular (a+bi)</td>
+              <td class = "complex-text">Rectangular Form (a+bi)</td>
               <td class = "complex-text">to</td>
               <td class = "complex-text">Polar Form (r cisθ)</td>
             </tr>
@@ -76,17 +76,16 @@
                 <input class = "form-control input-lg complexInput" placeholder = "Magnitude" ng-model = "magnitude" ng-change = "toRectangular()">
                 <span class = "complex-text"> cis </span>
                 <input class = "form-control input-lg complexInput" placeholder = "Argument" ng-model = "argument" ng-change ="toRectangular()">
-                <button class = "btn btn-lg btn-primary" type = "button" ng-click = "changeUnits()" ng-show = "degrees">Degrees</button>
-                <button class = "btn btn-lg btn-primary" type = "button" ng-click = "changeUnits()" ng-show = "!degrees">Radians</button>
+                <button class = "btn btn-lg btn-primary" type = "button" ng-click = "changeUnits()">{[{button}]}</button>
               </td>
             </tr>
           </table>
 
-        <div class = "row">
-          <div class = "col-md-4 col-md-offset-4">
-            <p class = "bg-danger" ng-show = "error != null">{[{error}]}</p>
+          <div class = "row">
+            <div class = "col-md-4 col-md-offset-4">
+              <p class = "bg-danger" ng-show = "error != null">{[{error}]}</p>
+            </div>
           </div>
-        </div>
         </div>
         <div role = "tabpanel" class = "tab-pane fade" id = "operations">
           <h2>Complex Operations</h2>
