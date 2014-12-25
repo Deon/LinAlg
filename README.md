@@ -7,6 +7,8 @@ LinAlg
   <li>Transposes</li>
   <li>Determinants</li>
   <li>Inverse Matrices</li>
+  <li>Polar-Rectangular form conversion for complex numbers</li>
+  <li>Multiplication and division of complex numbers in rectangular form</li>
 </ul>
 <p>Developed with AngularJS, MathJax, Flask, Sympy, and Python.</p>
 <p id = "footer">Made with love.</p>
