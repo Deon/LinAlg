@@ -97,8 +97,8 @@
                   <li ng-if = "response.trace">Trace: {[{response.trace}]}</li>
                 </ul>
               </td>
-              <td>{[{response.original}]}</td>
-              <td>{[{response.transpose}]}</td>
+              <td ng-if="response.original">{[{response.original}]}</td>
+              <td ng-if="response.transpose">{[{response.transpose}]}</td>
               <td>
                 <table class = "space-table table" align = "center">
                   <tr>
@@ -113,14 +113,14 @@
                   </tr>
                 </table>
               </td>
-              <td>
+              <td ng-if = "response.nullity != 0">
                 <table class = "space-table table" align = "center">
                   <tr>
                     <td ng-repeat = "vector in response.nullspace">{[{vector}]}</td>
                   </tr>
                 </table>
-                <span ng-if = "response.nullity == 0">None (nullity is 0)</span>
               </td>
+              <td ng-if="response.nullity == 0">None (nullity is 0)</td>
             </tr>
             <tr ng-if = "response.inverse">
               <th>RREF Matrix</th>
@@ -139,8 +139,8 @@
                   <li ng-if = "response.rrefTrace">Trace: {[{response.rrefTrace}]}</li>
                 </ul>
               </td>
-              <td>{[{response.rref}]}</td>
-              <td>{[{response.rrefTranspose}]}</td>
+              <td ng-if="response.rref">{[{response.rref}]}</td>
+              <td ng-if="response.rrefTranspose">{[{response.rrefTranspose}]}</td>
 
               <td>
                 <ul class = "list-unstyled">

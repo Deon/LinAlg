@@ -222,7 +222,11 @@ select.form-control{
 // Nested tables in matrix output.
 .table .table{
   background-color: $background;
+  padding: 0;
+  margin: 0;
 }
 td > .table > tbody > tr > td{
   border: 0;
+  padding: 0;
+  margin: 0;
 }
