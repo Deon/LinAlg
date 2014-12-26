@@ -142,4 +142,15 @@ select.form-control {
   margin-left: 20px;
   margin-right: 20px; }
 
+.space-table {
+  margin: 0;
+  padding: 0;
+  text-align: center; }
+
+.table .table {
+  background-color: #FFF8E1; }
+
+td > .table > tbody > tr > td {
+  border: 0; }
+
 /*# sourceMappingURL=style.css.map */

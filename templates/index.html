@@ -44,7 +44,7 @@
 <body ng-controller="MatrixController">
 <div class = "container-fluid">
   <div class = "row">
-    <div class = "col-md-8 col-md-offset-2">
+    <div class = "col-md-10 col-md-offset-1">
       <h2>Matrix Reducer</h2>
       <form class="form" role="form" ng-show = "isSizeSet == false">
         <p>Enter the size of your matrix.</p>
@@ -100,18 +100,24 @@
               <td>{[{response.original}]}</td>
               <td>{[{response.transpose}]}</td>
               <td>
-                <table>
+                <table class = "space-table table" align = "center">
+                  <tr>
                   <td ng-repeat = "vector in response.colspace">{[{vector}]}</td>
+                  </tr>
                 </table>
               </td>
               <td>
-                <table>
+                <table class = "space-table table" align = "center">
+                  <tr>
                   <td ng-repeat = "vector in response.rowspace">{[{vector}]}</td>
+                  </tr>
                 </table>
               </td>
               <td>
-                <table>
-                  <td ng-repeat = "vector in response.nullspace">{[{vector}]}</td>
+                <table class = "space-table table" align = "center">
+                  <tr>
+                    <td ng-repeat = "vector in response.nullspace">{[{vector}]}</td>
+                  </tr>
                 </table>
                 <span ng-if = "response.nullity == 0">None (nullity is 0)</span>
               </td>
