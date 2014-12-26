@@ -81,29 +81,84 @@
         <div class = "table-responsive">
           <table ng-show = "response" align = "center" class = "table">
             <tr>
+              <th>Matrix Properties</th>
               <th>Original Matrix</th>
-              <th>Matrix in RREF</th>
-              <th ng-if = "response.inverse">Inverse</th>
-            </tr>
-            <tr ng-if = "rows == cols">
-              <td>Determinant {[{response.det}]}</td>
-              <td>Determinant {[{response.rrefDet}]}</td>
-              <td ng-if = "response.inverse">Determinant {[{response.inverseDet}]}</td>
-            </tr>
-            <tr>
-              <td>{[{response.original}]}</td>
-              <td>{[{response.rref}]}</td>
-              <td ng-if = "response.inverse">{[{response.inverse}]}</td>
-            </tr>
-            <tr>
               <th>Transpose</th>
-              <th>RREF Transpose</th>
-              <th ng-if = "response.inverse">Inverse Transpose</th>
+              <th>Column Space</th>
+              <th>Row Space</th>
+              <th>Null Space</th>
             </tr>
             <tr>
+              <td>
+                <ul class = "list-unstyled">
+                  <li>Rank: {[{response.rank}]}</li>
+                  <li>Nullity: {[{response.nullity}]}</li>
+                  <li ng-if = "response.det">Determinant: {[{response.det}]}</li>
+                  <li ng-if = "response.trace">Trace: {[{response.trace}]}</li>
+                </ul>
+              </td>
+              <td>{[{response.original}]}</td>
               <td>{[{response.transpose}]}</td>
+              <td>
+                <table>
+                  <td ng-repeat = "vector in response.colspace">{[{vector}]}</td>
+                </table>
+              </td>
+              <td>
+                <table>
+                  <td ng-repeat = "vector in response.rowspace">{[{vector}]}</td>
+                </table>
+              </td>
+              <td>
+                <table>
+                  <td ng-repeat = "vector in response.nullspace">{[{vector}]}</td>
+                </table>
+                <span ng-if = "response.nullity == 0">None (nullity is 0)</span>
+              </td>
+            </tr>
+            <tr ng-if = "response.inverse">
+              <th>RREF Matrix</th>
+              <th>RREF</th>
+              <th>RREF Transpose</th>
+
+              <th>Inverse Matrix</th>
+              <th>Inverse</th>
+              <th>Inverse Transpose</th>
+
+            </tr>
+            <tr ng-if = "response.inverse">
+              <td>
+                <ul class= "list-unstyled">
+                  <li ng-if = "response.rrefDet">Determinant: {[{response.rrefDet}]}</li>
+                  <li ng-if = "response.rrefTrace">Trace: {[{response.rrefTrace}]}</li>
+                </ul>
+              </td>
+              <td>{[{response.rref}]}</td>
               <td>{[{response.rrefTranspose}]}</td>
-              <td ng-if = "response.inverse">{[{response.inverseTranspose}]}</td>
+
+              <td>
+                <ul class = "list-unstyled">
+                  <li>Determinant: {[{response.inverseDet}]}</li>
+                  <li>Trace: {[{response.inverseTrace}]}</li>
+                </ul>
+              </td>
+              <td>{[{response.inverse}]}</td>
+              <td>{[{response.inverseTranspose}]}</td>
+            </tr>
+            <tr ng-if = "!response.inverse">
+              <th colspan = "2">RREF Matrix</th>
+              <th colspan = "2">RREF</th>
+              <th colspan = "2">RREF Transpose</th>
+            </tr>
+            <tr ng-if = "!response.inverse">
+              <td colspan = "2">
+                <ul class= "list-unstyled">
+                  <li ng-if = "response.rrefDet">Determinant: {[{response.rrefDet}]}</li>
+                  <li ng-if = "response.rrefTrace">Trace: {[{response.rrefTrace}]}</li>
+                </ul>
+              </td>
+              <td colspan = "2">{[{response.rref}]}</td>
+              <td colspan = "2">{[{response.rrefTranspose}]}</td>
             </tr>
           </table>
         </div>
