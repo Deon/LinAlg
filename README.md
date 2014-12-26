@@ -4,6 +4,7 @@ LinAlg
 </p>
 <ul>
   <li>RREFs Matrices</li>
+  <li>Row, column, and null spaces</li>
   <li>Transposes</li>
   <li>Determinants</li>
   <li>Inverse Matrices</li>
