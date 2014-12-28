@@ -1,5 +1,6 @@
 __author__ = 'Deon Hua'
 from flask import *
+from crossdomain import *
 import os
 import json
 from sympy import *
@@ -21,7 +22,8 @@ def complex():
     return render_template("complex.html")
 
 #Matrix calculations
-@app.route("/getReducedMatrix/", methods = ["POST"], origin = "*")
+@app.route("/getReducedMatrix/", methods = ["POST"])
+@crossdomain(origin = "*")
 def getMatrix():
     entries = request.get_json()
     matrix = Matrix(entries)
