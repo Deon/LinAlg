@@ -21,7 +21,7 @@ def complex():
     return render_template("complex.html")
 
 #Matrix calculations
-@app.route("/getReducedMatrix/", methods = ["POST"])
+@app.route("/getReducedMatrix/", methods = ["POST"], origin = "*")
 def getMatrix():
     entries = request.get_json()
     matrix = Matrix(entries)
