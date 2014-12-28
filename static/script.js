@@ -12,7 +12,7 @@ app.config(['$routeProvider',
   function($routeProvider){
     $routeProvider.
       when('/',{
-        templateUrl: 'partials/index.html',
+        templateUrl: 'partials/matrix.html',
         controller: 'MatrixController'
       }).
       when('/complex',{
