@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>LinAlg | Matrices</title>
+  <title>LinAlg Toolkit</title>
 
   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="static/style.css">
@@ -18,32 +18,11 @@
   <script src="static/controllers.js" type = "text/javascript"></script>
 </head>
 
-<!--Navbar-->
-<nav class="navbar navbar-default" role="navigation">
-<div class="container-fluid">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="/">LinAlg Alpha</a>
-  </div>
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="/" class = "active">Matrices<span class="sr-only">(current)</span></a></li>
-      <li><a href = "/complex">Complex Numbers</a></li>
-      <li><a href="/about">About</a></li>
-    </ul>
-  </div>
-</div>
-</nav>
 
 <body>
+<div ng-view></div>
 </body>
+
 <!--Google Analytics-->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

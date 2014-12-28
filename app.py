@@ -7,21 +7,7 @@ init_printing()
 
 app = Flask(__name__)
 
-#Page rendering
-@app.route("/")
-def hello():
-    return render_template("index.html")
-
-@app.route("/about.html")
-def about():
-    return render_template("about.html")
-
-@app.route("/complex.html")
-def complex():
-    return render_template("complex.html")
-
-#Matrix calculations
-@app.route("/getReducedMatrix/", methods = ["POST"])
+@app.route("/getReducedMatrix/", methods = ["POST"], origin='*')
 def getMatrix():
     entries = request.get_json()
     matrix = Matrix(entries)

@@ -12,14 +12,14 @@ app.config(['$routeProvider',
   function($routeProvider){
     $routeProvider.
       when('/',{
-        templateUrl: 'index.html',
+        templateUrl: 'partials/index.html',
         controller: 'MatrixController'
       }).
       when('/complex',{
-        templateUrl: 'complex.html'
+        templateUrl: 'partials/complex.html'
       }).
       when('/about',{
-        templateUrl: 'about.html'
+        templateUrl: 'partials/about.html'
       }).
       otherwise({
         redirectTo: '/'
