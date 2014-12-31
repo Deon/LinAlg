@@ -47,7 +47,7 @@ app.controller('MatrixController', function($scope, $http){
     $scope.response = null;
     if ($scope.error == null) {
       $http({
-        url: 'http://linalg.herokuapp.com/getReducedMatrix/',
+        url: 'https://linalg.herokuapp.com/getReducedMatrix/',
         data: $scope.inputMatrix,
         method: "POST",
         headers: {'Content-Type': 'application/json'}
