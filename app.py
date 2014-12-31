@@ -1,12 +1,13 @@
 __author__ = 'Deon Hua'
 from flask import *
-from crossdomain import *
 import os
 import json
 from sympy import *
+from flask_cors import *
 init_printing()
 
 app = Flask(__name__)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 #Page rendering
 @app.route("/")
@@ -23,7 +24,7 @@ def complex():
 
 #Matrix calculations
 @app.route("/getReducedMatrix/", methods = ["POST"])
-@crossdomain(origin='*')
+@cross_origin()
 def getMatrix():
     entries = request.get_json()
     matrix = Matrix(entries)
