@@ -23,7 +23,7 @@ def complex():
 
 #Matrix calculations
 @app.route("/getReducedMatrix/", methods = ["POST"])
-@crossdomain(origin = "*")
+@crossdomain(origin='*')
 def getMatrix():
     entries = request.get_json()
     matrix = Matrix(entries)
