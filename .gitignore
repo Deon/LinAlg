@@ -28,6 +28,9 @@ ptable-parser/
 *.egg-info/
 .installed.cfg
 *.egg
+bower_components/
+node_modules/
+_site/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -61,3 +64,7 @@ docs/_build/
 target/
 *.xml
 *.xml
+
+#Installers for gemfiles
+Gemfile
+Gemfile.lock
