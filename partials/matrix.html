@@ -65,9 +65,9 @@
               <th>Matrix Properties</th>
               <th>Original Matrix</th>
               <th>Transpose</th>
-              <th>Column Space</th>
-              <th>Row Space</th>
-              <th>Null Space</th>
+              <th>Column Space (Basis)</th>
+              <th>Row Space (Basis)</th>
+              <th>Null Space (Basis)</th>
             </tr>
             <tr>
               <td>
@@ -101,7 +101,7 @@
                   </tr>
                 </table>
               </td>
-              <td ng-if="response.nullity == 0">None (nullity is 0)</td>
+              <td ng-if="response.nullity == 0">Trivial (nullity is 0)</td>
             </tr>
             <tr ng-if = "response.inverse">
               <th>RREF Matrix</th>
