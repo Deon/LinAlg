@@ -32,10 +32,10 @@
         <div class="form-group">
           <div class = "row">
             <div class = "col-xs-6 col-md-3 col-md-offset-2">
-              <input class="form-control input-lg" placeholder="Rows" ng-model = "rows" >
+              <input class="form-control input-lg" placeholder="Rows" type = "number" ng-model = "rows" >
             </div>
             <div class = "col-xs-6 col-md-3">
-              <input class="form-control input-lg" placeholder="Columns" ng-model = "cols">
+              <input class="form-control input-lg" placeholder="Columns" type = "number" ng-model = "cols">
             </div>
             <div class = "col-xs-6 col-xs-offset-3 col-md-2 col-md-offset-0">
               <button type="submit" class="btn btn-lg btn-primary submit" ng-click = setSize()>Set Size!</button>
@@ -51,7 +51,7 @@
             <table align = "center">
               <tr ng-repeat = "row in getRows() track by $index">
                 <td class = "matrixElement" ng-repeat = "col in getCols() track by $index" >
-                  <input class="form-control input-lg matrixField" ng-model = "inputMatrix[$parent.$index][$index]">
+                  <input class="form-control input-lg matrixField" type = "number" ng-model = "inputMatrix[$parent.$index][$index]">
                 </td>
               </tr>
             </table>

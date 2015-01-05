@@ -6,7 +6,7 @@ MathJax.Hub.Config({
   }
 });
 
-var app = angular.module('linAlgApp', ['ngRoute', 'linAlgControllers']);
+var app = angular.module('linAlgApp', ['ngRoute', 'ngTouch', 'ngAnimate', 'linAlgControllers']);
 
 app.config(['$routeProvider',
   function($routeProvider){
