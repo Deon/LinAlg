@@ -7,7 +7,7 @@ MathJax.Hub.Config({
 });
 
 //Declare module
-var app = angular.module('LinAlgToolkit', []);
+var app = angular.module('LinAlgToolkit', ['ngTouch', 'ngAnimate']);
 
 app.config(function($interpolateProvider) {
   $interpolateProvider.startSymbol('{[{');
