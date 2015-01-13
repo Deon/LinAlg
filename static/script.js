@@ -127,6 +127,9 @@ app.controller('ConversionController', function($scope){
       else
         $scope.argument = calculateArgument().toFixed($scope.decimalPlaces);
     }
+
+    console.log($scope.magnitude);
+    console.log($scope.argument);
   };
 
   $scope.changeUnits = function(){
