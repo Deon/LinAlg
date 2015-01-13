@@ -43,18 +43,18 @@
               </tr>
               <tr>
                 <td>
-                  <input class = "form-control input-lg complexInput" placeholder = "Real" type = "number" ng-model = "real" ng-change = "toPolar()">
+                  <input class = "form-control input-lg complexInput" placeholder = "Real" ng-model = "real" ng-change = "toPolar()">
                   <span class = "complex-text"> + </span>
-                  <input class = "form-control input-lg complexInput" placeholder = "Imaginary" type = "number" ng-model = "imaginary" ng-change = "toPolar()">
+                  <input class = "form-control input-lg complexInput" placeholder = "Imaginary" ng-model = "imaginary" ng-change = "toPolar()">
                   <span class = "complex-text">i</span>
                 </td>
                 <td id = "equal">
                   <span class = "complex-text"> = </span>
                 </td>
                 <td>
-                  <input class = "form-control input-lg complexInput" placeholder = "Magnitude" type = "number" ng-model = "magnitude" ng-change = "toRectangular()">
+                  <input class = "form-control input-lg complexInput" placeholder = "Magnitude" ng-model = "magnitude" ng-change = "toRectangular()">
                   <span class = "complex-text"> cis </span>
-                  <input class = "form-control input-lg complexInput" placeholder = "Argument" type = "number" ng-model = "argument" ng-change ="toRectangular()">
+                  <input class = "form-control input-lg complexInput" placeholder = "Argument" ng-model = "argument" ng-change ="toRectangular()">
                   <button class = "btn btn-lg btn-primary" type = "button" ng-click = "changeUnits()">{[{button}]}</button>
                 </td>
               </tr>
